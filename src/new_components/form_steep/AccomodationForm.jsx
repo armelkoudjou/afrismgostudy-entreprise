@@ -1,13 +1,13 @@
 "use client"
 import React from 'react';
 export default function AccommodationForm({
-                                              formData,
-                                              handleAccommodationSelect,
-                                              nextStep,
-                                              prevStep,
-                                              errors,
-                                              accommodations,
-                                          }) {
+                                            formData,
+                                            handleAccommodationSelect,
+                                            nextStep,
+                                            prevStep,
+                                            errors,
+                                            accommodations,
+                                        }) {
     return (
         <div className="space-y-6">
             <div>
