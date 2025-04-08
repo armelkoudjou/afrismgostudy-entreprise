@@ -1,4 +1,4 @@
-export const countries = ['France', 'Russie', 'Canada', 'Belgique'];
+export const countries = ['France','Canada', 'Belgique'];
 
 export const levels = ['License', 'Master', 'Doctorat'];
 
@@ -92,5 +92,32 @@ export const programs = [
       needAirportPickup: false,
       needYearlyAssistance: true
     }
+
+  },
+  {
+    id: '4',
+    city: 'Saint-Pétersbourg',
+    country: 'Russie',
+    university: 'Université Polytechnique Pierre le Grand',
+    field: 'Ingénierie',
+    subField: 'Informatique',
+    level: 'Master',
+    duration: '2 ans',
+    ranking: 50,
+    description: 'Programme avancé en ingénierie informatique avec un accent sur les technologies émergentes.',
+    careers: ['Développeur logiciel', 'Architecte cloud'],
+    tuitionFee: 5000,
+    accommodationFee: 300,
+    availability: true,
+    additionalServices: {
+      hasPassport: false,
+      needPassportAssistance: false,
+      hasTranslatedDiplomas: true,
+      needTranslationService: false,
+      hasRussianContact: false,
+      needAirportPickup: true,
+      needYearlyAssistance: true
+    }
   }
+  
 ];
