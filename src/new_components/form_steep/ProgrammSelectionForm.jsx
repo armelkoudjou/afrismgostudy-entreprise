@@ -1,34 +1,55 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 
 export default function ProgramSelectionForm({ formData, handleChange, nextStep, prevStep, errors, mockData }) {
     const [subStep, setSubStep] = useState(1);
+    const [availableCategories, setAvailableCategories] = useState([]);
     const [availableUniversities, setAvailableUniversities] = useState([]);
     const [availableFields, setAvailableFields] = useState([]);
 
     useEffect(() => {
         if (formData.country) {
-            setAvailableUniversities(mockData.universities[formData.country] || []);
+            setAvailableCategories(mockData?.categories?.[formData.country] || []);
+        } else {
+            setAvailableCategories([]);
+        }
+    }, [formData.country, mockData]);
+
+    useEffect(() => {
+        if (formData.category) {
+            const universities = mockData?.universities?.[formData.category];
+            if (universities) {
+                setAvailableUniversities(universities);
+            } else {
+                console.error(`La catégorie "${formData.category}" n'a pas de correspondance dans mockData.universities.`);
+                setAvailableUniversities([]);
+            }
         } else {
             setAvailableUniversities([]);
         }
-    }, [formData.country, mockData.universities]);
+    }, [formData.category, mockData]);
+
+    useEffect(() => {
+        console.log("Catégorie sélectionnée :", formData.category);
+        console.log("Universités disponibles :", mockData?.universities?.[formData.category]);
+    }, [formData.category, mockData]);
 
     useEffect(() => {
         if (formData.university && formData.level) {
-            setAvailableFields(mockData.fields[formData.university]?.[formData.level] || []);
+            setAvailableFields(mockData?.fields?.[formData.university]?.[formData.level] || []);
         } else {
             setAvailableFields([]);
         }
-    }, [formData.university, formData.level, mockData.fields]);
+    }, [formData.university, formData.level, mockData]);
 
     const handleSubStepNext = () => {
         if (subStep === 1 && !formData.country) return;
-        if (subStep === 2 && !formData.university) return;
-        if (subStep === 3 && !formData.level) return;
-        if (subStep === 4 && !formData.field) return;
+        if (subStep === 2 && !formData.category) return;
+        if (subStep === 3 && !formData.university) return;
+        if (subStep === 4 && !formData.level) return;
+        if (subStep === 5 && !formData.field) return;
 
-        if (subStep < 4) {
+        if (subStep < 5) {
             setSubStep(subStep + 1);
         } else {
             nextStep();
@@ -51,7 +72,7 @@ export default function ProgramSelectionForm({ formData, handleChange, nextStep,
                         <h3 className="text-lg font-medium text-gray-900">Sélection du Pays</h3>
                         <p className="text-sm text-gray-600">Choisissez le pays où vous souhaitez étudier</p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {mockData.countries.map((country) => (
+                            {mockData?.countries?.map((country) => (
                                 <div
                                     key={country}
                                     onClick={() => handleChange({ target: { name: "country", value: country } })}
@@ -69,6 +90,29 @@ export default function ProgramSelectionForm({ formData, handleChange, nextStep,
                     </div>
                 );
             case 2:
+                return (
+                    <div className="space-y-4">
+                        <h3 className="text-lg font-medium text-gray-900">Sélection de la Catégorie d'Université</h3>
+                        <p className="text-sm text-gray-600">Choisissez une catégorie d'université</p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            {availableCategories.map((category) => (
+                                <div
+                                    key={category}
+                                    onClick={() => handleChange({ target: { name: "category", value: category } })}
+                                    className={`p-4 border rounded-md cursor-pointer ${
+                                        formData.category === category
+                                            ? "border-indigo-500 bg-indigo-50"
+                                            : "border-gray-300 hover:border-indigo-300"
+                                    }`}
+                                >
+                                    <div className="font-medium">{category}</div>
+                                </div>
+                            ))}
+                        </div>
+                        {errors.category && <p className="mt-1 text-sm text-red-600">{errors.category}</p>}
+                    </div>
+                );
+            case 3:
                 return (
                     <div className="space-y-4">
                         <h3 className="text-lg font-medium text-gray-900">Sélection de l'Université</h3>
@@ -91,7 +135,7 @@ export default function ProgramSelectionForm({ formData, handleChange, nextStep,
                         {errors.university && <p className="mt-1 text-sm text-red-600">{errors.university}</p>}
                     </div>
                 );
-            case 3:
+            case 4:
                 return (
                     <div className="space-y-4">
                         <h3 className="text-lg font-medium text-gray-900">Niveau d'Études</h3>
@@ -114,7 +158,7 @@ export default function ProgramSelectionForm({ formData, handleChange, nextStep,
                         {errors.level && <p className="mt-1 text-sm text-red-600">{errors.level}</p>}
                     </div>
                 );
-            case 4:
+            case 5:
                 return (
                     <div className="space-y-4">
                         <h3 className="text-lg font-medium text-gray-900">Sélection de la Filière</h3>
@@ -159,15 +203,15 @@ export default function ProgramSelectionForm({ formData, handleChange, nextStep,
                     className="px-6 py-2 bg-indigo-600 text-white font-medium rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                     disabled={
                         (subStep === 1 && !formData.country) ||
-                        (subStep === 2 && !formData.university) ||
-                        (subStep === 3 && !formData.level) ||
-                        (subStep === 4 && !formData.field)
+                        (subStep === 2 && !formData.category) ||
+                        (subStep === 3 && !formData.university) ||
+                        (subStep === 4 && !formData.level) ||
+                        (subStep === 5 && !formData.field)
                     }
                 >
-                    {subStep < 4 ? "Suivant" : "Continuer vers Hébergement"}
+                    {subStep < 5 ? "Suivant" : "Continuer vers Hébergement"}
                 </button>
             </div>
         </div>
     );
 }
-
