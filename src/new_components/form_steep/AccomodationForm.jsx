@@ -11,8 +11,8 @@ export default function AccommodationForm({
     return (
         <div className="space-y-6">
             <div>
-                <h3 className="text-lg font-medium text-gray-900 mb-4">Choix de l'Hébergement</h3>
-                <p className="text-sm text-gray-600 mb-6">Sélectionnez le type d'hébergement qui vous convient</p>
+                <h3 className="text-lg font-medium text-gray-900 mb-4">Choix du Logement</h3>
+                <p className="text-sm text-gray-600 mb-6">Sélectionnez le type de Logement qui vous convient</p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {accommodations.map((accommodation) => (

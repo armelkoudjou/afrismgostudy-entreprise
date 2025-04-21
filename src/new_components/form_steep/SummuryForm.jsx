@@ -1,41 +1,34 @@
-
-import React from 'react';
-
-import { useState } from "react"
-import { PDFDownloadLink } from "@react-pdf/renderer"
-import PDFDocument from "../PDFDocument"
+// Résumé du formulaire — version corrigée
+import React, { useState } from 'react';
+import { SERVICE_IDS } from '../lib/data';
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import PDFDocument from "../PDFDocument";
+import { mockData } from "../lib/data";
 
 export default function SummaryForm({ formData, prevStep, mockData }) {
-    const [isSubmitting, setIsSubmitting] = useState(false)
-    const [isSubmitted, setIsSubmitted] = useState(false)
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
     const handleSubmit = () => {
-        setIsSubmitting(true)
-
-        // Simuler un appel API pour enregistrer les données
+        setIsSubmitting(true);
         setTimeout(() => {
-            setIsSubmitting(false)
-            setIsSubmitted(true)
-        }, 1500)
-    }
+            setIsSubmitting(false);
+            setIsSubmitted(true);
+        }, 1500);
+    };
 
-    // Calculer le coût total des services sélectionnés
     const calculateServicesCost = () => {
         return formData.selectedServices.reduce((total, serviceId) => {
-            const service = mockData.additionalServices.find((s) => s.id === serviceId)
-            return total + (service ? service.price : 0)
-        }, 0)
-    }
+            const service = mockData.additionalServices.find(service => service.id === serviceId);
+            return total + (service ? service.price : 0);
+        }, 0);
+    };
 
-    // Obtenir les détails des services sélectionnés
-    const getSelectedServices = () => {
-        return formData.selectedServices
-            .map((serviceId) => mockData.additionalServices.find((s) => s.id === serviceId))
-            .filter(Boolean)
-    }
+    const selectedServices = formData.selectedServices
+        .map(serviceId => mockData.additionalServices.find(s => s.id === serviceId))
+        .filter(Boolean);
 
-    const selectedServices = getSelectedServices()
-    const servicesCost = calculateServicesCost()
+    const servicesCost = calculateServicesCost();
 
     return (
         <div className="space-y-6">
@@ -44,14 +37,14 @@ export default function SummaryForm({ formData, prevStep, mockData }) {
                 <p className="text-sm text-gray-600 mb-6">Vérifiez les informations avant de finaliser votre inscription</p>
 
                 <div className="space-y-6">
+
+                    {/* Informations personnelles */}
                     <div className="bg-gray-50 p-4 rounded-md border border-gray-200">
                         <h4 className="text-md font-medium text-gray-900 mb-3">Informations Personnelles</h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <p className="text-sm text-gray-600">Nom complet</p>
-                                <p className="font-medium">
-                                    {formData.firstName} {formData.lastName}
-                                </p>
+                                <p className="font-medium">{formData.firstName} {formData.lastName}</p>
                             </div>
                             <div>
                                 <p className="text-sm text-gray-600">Date de naissance</p>
@@ -71,13 +64,12 @@ export default function SummaryForm({ formData, prevStep, mockData }) {
                             </div>
                             <div>
                                 <p className="text-sm text-gray-600">Parent</p>
-                                <p className="font-medium">
-                                    {formData.parentName} ({formData.parentContact})
-                                </p>
+                                <p className="font-medium">{formData.parentName} ({formData.parentContact})</p>
                             </div>
                         </div>
                     </div>
 
+                    {/* Programme d'études */}
                     <div className="bg-gray-50 p-4 rounded-md border border-gray-200">
                         <h4 className="text-md font-medium text-gray-900 mb-3">Programme d'Études</h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -98,10 +90,19 @@ export default function SummaryForm({ formData, prevStep, mockData }) {
                                 <p className="font-medium">{formData.level}</p>
                             </div>
                         </div>
+
+                        {/* Frais de scolarité */}
+                        <div className="flex justify-between items-center mt-4 pt-3 border-t border-gray-300">
+                            <p className="font-medium text-gray-900">Frais de scolarité</p>
+                            <p className="text-indigo-600 font-medium">
+                                {formData.tuitionFee ? formData.tuitionFee.toLocaleString() : '0'} FCFA
+                            </p>
+                        </div>
                     </div>
 
+                    {/* Logement */}
                     <div className="bg-gray-50 p-4 rounded-md border border-gray-200">
-                        <h4 className="text-md font-medium text-gray-900 mb-3">Hébergement</h4>
+                        <h4 className="text-md font-medium text-gray-900 mb-3">Logement</h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <p className="text-sm text-gray-600">Type</p>
@@ -113,14 +114,14 @@ export default function SummaryForm({ formData, prevStep, mockData }) {
                             </div>
                             <div>
                                 <p className="text-sm text-gray-600">Prix mensuel</p>
-                                <p className="font-medium">{formData.accommodation?.price.toLocaleString()} FCFA</p>
+                                <p className="font-medium">{formData.accommodation?.price?.toLocaleString()} FCFA</p>
                             </div>
                         </div>
                     </div>
 
+                    {/* Services Complémentaires */}
                     <div className="bg-gray-50 p-4 rounded-md border border-gray-200">
                         <h4 className="text-md font-medium text-gray-900 mb-3">Services Complémentaires</h4>
-
                         {selectedServices.length > 0 ? (
                             <div className="space-y-3">
                                 {selectedServices.map((service) => (
@@ -132,7 +133,6 @@ export default function SummaryForm({ formData, prevStep, mockData }) {
                                         <p className="font-medium text-indigo-600 ml-4">{service.price.toLocaleString()} FCFA</p>
                                     </div>
                                 ))}
-
                                 <div className="flex justify-between items-center pt-3 mt-2 border-t border-gray-300 font-medium">
                                     <p>Total des services</p>
                                     <p className="text-indigo-600 text-lg">{servicesCost.toLocaleString()} FCFA</p>
@@ -145,6 +145,7 @@ export default function SummaryForm({ formData, prevStep, mockData }) {
                 </div>
             </div>
 
+            {/* Boutons d'action */}
             <div className="flex justify-between">
                 <button
                     type="button"
@@ -176,11 +177,5 @@ export default function SummaryForm({ formData, prevStep, mockData }) {
                 </div>
             </div>
         </div>
-    )
+    );
 }
-
-
-
-
-
-

@@ -1,11 +1,32 @@
 "use client";
 import React, { useState, useEffect } from "react";
 
+// Frais par catégorie (ajoute ou modifie selon tes besoins)
+
+
+
 export default function ProgramSelectionForm({ formData, handleChange, nextStep, prevStep, errors, mockData }) {
     const [subStep, setSubStep] = useState(1);
     const [availableCategories, setAvailableCategories] = useState([]);
     const [availableUniversities, setAvailableUniversities] = useState([]);
     const [availableFields, setAvailableFields] = useState([]);
+    const tuitionFees = {
+        "Les Universites Medicales de la Russie": 50000,
+          "Les Universites D'ingenieur Et Techniques de la Russie": 60000,
+          "Les Universites D’economie de la Russie": 55000,
+          "Les Universites Agricoles / Agraire de la Russie": 52000,
+          "Les Universites D'architecture Et De La Construction de la Russie": 58000,
+          "Les Universites Chimiques Et Technologiques de la Russie": 58000,
+          "Les Universites de La Geologie, L'industrie Miniere Et La Metallurgie de la Russie": 58000,
+          "Les Universites Petro-Gaziers de la Russie": 58000,
+          "Les Universites De La Technologie D’alimentation de la Russie": 58000,
+          "Les Universites D’industrie Forestiere de la Russie": 58000,
+          "Les Universites Marines Et Maritimes de la Russie": 58000,
+          "Les Universites D’aviation de la Russie": 58000,
+          "Les Universites Universites D'état de la Russie": 58000
+        };
+        
+
 
     useEffect(() => {
         if (formData.country) {
@@ -18,6 +39,11 @@ export default function ProgramSelectionForm({ formData, handleChange, nextStep,
     useEffect(() => {
         if (formData.category) {
             const universities = mockData?.universities?.[formData.category];
+            
+            const tuitionFee = tuitionFees[formData.category] || 0;
+            handleChange({ target: { name: "tuitionFee", value: tuitionFee } });
+
+            
             if (universities) {
                 setAvailableUniversities(universities);
             } else {
@@ -41,6 +67,12 @@ export default function ProgramSelectionForm({ formData, handleChange, nextStep,
             setAvailableFields([]);
         }
     }, [formData.university, formData.level, mockData]);
+
+    const handleUniversitySelect = (university) => {
+        const tuitionFee = tuitionFees[formData.category] || 0;
+        handleChange({ target: { name: "university", value: university } });
+        handleChange({ target: { name: "tuitionFee", value: tuitionFee } });
+    };
 
     const handleSubStepNext = () => {
         if (subStep === 1 && !formData.country) return;
@@ -121,7 +153,7 @@ export default function ProgramSelectionForm({ formData, handleChange, nextStep,
                             {availableUniversities.map((university) => (
                                 <div
                                     key={university}
-                                    onClick={() => handleChange({ target: { name: "university", value: university } })}
+                                    onClick={() => handleUniversitySelect(university)}
                                     className={`p-4 border rounded-md cursor-pointer ${
                                         formData.university === university
                                             ? "border-indigo-500 bg-indigo-50"
@@ -209,7 +241,7 @@ export default function ProgramSelectionForm({ formData, handleChange, nextStep,
                         (subStep === 5 && !formData.field)
                     }
                 >
-                    {subStep < 5 ? "Suivant" : "Continuer vers Hébergement"}
+                    {subStep < 5 ? "Suivant" : "Continuer vers Choix Logement"}
                 </button>
             </div>
         </div>

@@ -1,7 +1,66 @@
 import { University } from "lucide-react";
 
-// Données simulées pour l'application
+
+export const SERVICE_IDS = {
+  PASSPORT: "passport",
+  TRANSLATION: "translation",
+  AIRPORT: "airport",
+  ASSURANCE: "assurance"
+};
+
+
+
 export const mockData = {
+
+  
+  accommodations: [
+    { type: "Chambre Simple", capacity: "1 personne", price: 150000 },
+    { type: "Chambre Double", capacity: "2 personnes", price: 100000 },
+    { type: "Studio", capacity: "1 personne", price: 250000 },
+    { type: "Appartement T1", capacity: "1-2 personnes", price: 350000 },
+    { type: "Appartement T2", capacity: "2-3 personnes", price: 450000 },
+    { type: "Résidence Universitaire", capacity: "1 personne", price: 80000 }
+],
+
+
+
+additionalServices: [
+    {
+        id: "passport",
+        name: "Passeport",
+        description: "Aide à l'obtention d'un passeport",
+        price: 115000
+    },
+    {
+        id: "translation",
+        name: "Traduction par document",
+        description: "Traduction de vos documents",
+        price: 30000
+    },
+    {
+        id: "airport",
+        name: "Accueil à l'aéroport",
+        description: "Accueil à l'aéroport et transport au lieu d'étude",
+        price: 300000
+    },
+    {
+      id: "assurance",
+      name: "Assurance",
+      description: "Assurance santé",
+      price: 65000
+  },
+  
+],
+
+
+
+
+
+
+studyLevels: ["Licence", "Master", "Doctorat"],
+
+    // Liste des pays
+
     countries: ["France", "Canada", "Belgique", "Suisse", "Maroc", "Sénégal", "Russie"],
     
     
@@ -20,7 +79,6 @@ export const mockData = {
             "Les Universites D’aviation de la Russie",
             "Les Universites D’economie de la Russie",
             "Les Universites Agricoles / Agraire de la Russie",          
-            "Les Universites de la Culture Et Les Arts De La Russie",
             "Les Universites D'architecture Et De La Construction de la Russie",
             "Les Universites Chimiques Et Technologiques de la Russie",
             "Les Universites de La Geologie, L'industrie Miniere Et La Metallurgie de la Russie",
@@ -29,6 +87,14 @@ export const mockData = {
             "Les Universites D’industrie Forestiere de la Russie",
         ]
     },
+
+
+
+
+
+
+
+
     universities: {
         "Les Universites Medicales de la Russie":[
             "L'université d'État médicale d'Altaï",
@@ -104,8 +170,6 @@ export const mockData = {
             "L'université d'État médicale sud d'Oural",
             "L'université d'État médicale d'Iaroslavl"
         ]
-        
-        
         ,
         "Les Universites D'ingenieur Et Techniques de la Russie":[
             "L'université d'État technique de Tambov",
@@ -379,44 +443,6 @@ export const mockData = {
                 "L'Académie d'État d'Agriculture d'Yakoutsk"
             ],
 
-
-            "Les Universites de la Culture Et Les Arts De La Russie":[
-                "L'académie d'aquarelle et les beaux arts de Moscou",
-                "L'académie d'État de la culture et les arts d'Altaï",
-                "L'université d'État de la culture et les arts de Belgorod",
-                "L'académie d'État des peintures de Voronej",
-                "L'académie d'État de la culture et les arts de Sibérie orientale",
-                "L'université d'État panrusse de la cinématographie S.A.Gerasimov",
-                "L'école supérieure des arts de Saint-Pétersbourg",
-                "L'école supérieure théâtrale M.S.Schepkin",
-                "L'institut d'État industrielle d'art de Gzhel",
-                "L'académie d'État de la culture slave",
-                "L'académie d'État classique Majmonid",
-                "L'académie d'État des arts d'Extrême Orient",
-                "L'académie d'État textile d'Ivanovo",
-                "Le conservatoire d'État de Kazan (l'Académie) N.G.Jiganov",
-                "L'université d'État de la culture et les arts de Kazan",
-                "L'université d'État de la culture et les arts de Kémérovo",
-                "L'académie d'État industrielle d'art de Moscou S.G.Stroganov",
-                "Le conservatoire (L'université) de Moscou",
-                "L'université d'État du design et la technologie de Moscou",
-                "L'université d'État de la presse de Moscou Ivan Fedorov",
-                "L'institut d'État de l'art et la culture de Perm",
-                "Le conservatoire d'État de Pétrozavodsk A.K.Glazounov",
-                "Le conservatoire d'État de Rostov S.V.Rakhmaninov",
-                "L'institut russe de textile et de l'industrie légère",
-                "L'académie d'État de la culture et les arts de Samara",
-                "L'académie d'État du théâtre de Saint-Pétersbourg",
-                "Le conservatoire d'État de Saint-Pétersbourg N.A.Rimsky-Korsakov",
-                "L'université d'État du cinéma et la télévision de Saint-Pétersbourg",
-                "L'université d'État de la technologie et le design de Saint-Pétersbourg",
-                "Le conservatoire d'État de Saratov L.V.Sobinov",
-                "L'académie d'État architecturale et artistique d'Oural",
-                "Le conservatoire d'État d'Oural M.P.Moussorgski",
-                "L'institut d'État du théâtre d'Iaroslavl"
-            ],
-
-
             "Les Universites D'architecture Et De La Construction de la Russie":[
     "L'université d'État d'architecture et de la construction de Volgograd",
     "L'université d'État d'architecture et de la construction de Voronej",
@@ -579,6 +605,9 @@ export const mockData = {
 
 
     },
+
+
+    
     fields: {
         "Université Paris-Sorbonne": {
             Licence: ["Lettres", "Histoire", "Philosophie", "Droit"],
@@ -6067,6 +6096,219 @@ export const mockData = {
                         "Études avancées en économie de l'énergie"
                       ]
                     },
+                      "L'université d'État technique de Daghestan, l'Institut du pétrole et du gaz": {
+                        Licence: [
+                          "Ingénierie pétrolière et gazière",
+                          "Technologies de forage",
+                          "Gestion des ressources énergétiques",
+                          "Géologie pétrolière"
+                        ],
+                        Master: [
+                          "Gestion avancée des projets pétroliers",
+                          "Technologies innovantes en exploration gazière",
+                          "Recherche en géosciences appliquées"
+                        ],
+                        Doctorat: [
+                          "Études avancées en ingénierie pétrolière",
+                          "Recherche en technologies de forage",
+                          "Innovation en gestion des ressources énergétiques"
+                        ]
+                      },
+                      "L'université d'Extrême Orient fédérale, l'Institut du pétrole et du gaz": {
+                        Licence: [
+                          "Ingénierie pétrolière et gazière",
+                          "Technologies de raffinage",
+                          "Gestion des systèmes énergétiques",
+                          "Géophysique appliquée"
+                        ],
+                        Master: [
+                          "Recherche en technologies de raffinage avancées",
+                          "Gestion durable des ressources énergétiques",
+                          "Applications en géophysique moderne"
+                        ],
+                        Doctorat: [
+                          "Études avancées en géophysique",
+                          "Recherche en gestion énergétique",
+                          "Innovation en technologies pétrolières"
+                        ]
+                      },
+                      "L'université d'État technique d'Irkoutsk, 'la Faculté du pétrole et du gaz'": {
+                        Licence: [
+                          "Ingénierie pétrolière et gazière",
+                          "Technologies de production énergétique",
+                          "Gestion des infrastructures pétrolières",
+                          "Géologie des hydrocarbures"
+                        ],
+                        Master: [
+                          "Recherche en production énergétique durable",
+                          "Gestion stratégique des projets pétroliers",
+                          "Applications avancées en géologie des hydrocarbures"
+                        ],
+                        Doctorat: [
+                          "Études avancées en ingénierie énergétique",
+                          "Recherche en technologies pétrolières innovantes",
+                          "Gestion des systèmes énergétiques complexes"
+                        ]
+                      },
+
+
+                        "L'université de Kazan fédérale, l'Institut du pétrole et du gaz": {
+                          Licence: [
+                            "Ingénierie pétrolière et gazière",
+                            "Technologies de raffinage",
+                            "Gestion des systèmes énergétiques",
+                            "Géophysique appliquée"
+                          ],
+                          Master: [
+                            "Recherche en technologies de raffinage avancées",
+                            "Gestion durable des ressources énergétiques",
+                            "Applications en géophysique moderne"
+                          ],
+                          Doctorat: [
+                            "Études avancées en géophysique",
+                            "Recherche en gestion énergétique",
+                            "Innovation en technologies pétrolières"
+                          ]
+                        },
+                        "L'institut des technologies humanitaires et d'ingénieur de Kama": {
+                          Licence: [
+                            "Technologies humanitaires appliquées",
+                            "Ingénierie des systèmes énergétiques",
+                            "Gestion des infrastructures pétrolières",
+                            "Géologie des hydrocarbures"
+                          ],
+                          Master: [
+                            "Gestion stratégique des projets humanitaires",
+                            "Recherche en ingénierie énergétique durable",
+                            "Applications avancées en géologie des hydrocarbures"
+                          ],
+                          Doctorat: [
+                            "Études avancées en ingénierie humanitaire",
+                            "Recherche en technologies énergétiques innovantes",
+                            "Gestion des systèmes complexes"
+                          ]
+                        },
+                        "L'université d'État technique de Kuban, 'la Faculté du pétrole et du gaz'": {
+                          Licence: [
+                            "Ingénierie pétrolière et gazière",
+                            "Technologies de production énergétique",
+                            "Gestion des infrastructures pétrolières",
+                            "Géologie des hydrocarbures"
+                          ],
+                          Master: [
+                            "Recherche en production énergétique durable",
+                            "Gestion stratégique des projets pétroliers",
+                            "Applications avancées en géologie des hydrocarbures"
+                          ],
+                          Doctorat: [
+                            "Études avancées en ingénierie énergétique",
+                            "Recherche en technologies pétrolières innovantes",
+                            "Gestion des systèmes énergétiques complexes"
+                          ]
+                        },
+                        "L'institut d'État technologique de Maikop, 'la Faculté du pétrole et du gaz'": {
+                          Licence: [
+                            "Ingénierie pétrolière et gazière",
+                            "Technologies de forage",
+                            "Gestion des ressources énergétiques",
+                            "Géologie pétrolière"
+                          ],
+                          Master: [
+                            "Gestion avancée des projets pétroliers",
+                            "Technologies innovantes en exploration gazière",
+                            "Recherche en géosciences appliquées"
+                          ],
+                          Doctorat: [
+                            "Études avancées en ingénierie pétrolière",
+                            "Recherche en technologies de forage",
+                            "Innovation en gestion des ressources énergétiques"
+                          ]
+                        },
+                        
+                          "L'université d'État ouverte de Moscou, l'Institut du pétrole et du gaz": {
+                            Licence: [
+                              "Ingénierie pétrolière et gazière",
+                              "Technologies de forage",
+                              "Gestion des ressources énergétiques",
+                              "Géologie pétrolière"
+                            ],
+                            Master: [
+                              "Gestion avancée des projets pétroliers",
+                              "Technologies innovantes en exploration gazière",
+                              "Recherche en géosciences appliquées"
+                            ],
+                            Doctorat: [
+                              "Études avancées en ingénierie pétrolière",
+                              "Recherche en technologies de forage",
+                              "Innovation en gestion des ressources énergétiques"
+                            ]
+                          },
+                          "L'institut du business de l'industrie pétrolière et gazière de Moscou": {
+                            Licence: [
+                              "Gestion des entreprises pétrolières",
+                              "Économie de l'industrie pétrolière",
+                              "Logistique et chaîne d'approvisionnement",
+                              "Marketing dans le secteur énergétique"
+                            ],
+                            Master: [
+                              "Stratégies de gestion dans l'industrie pétrolière",
+                              "Recherche en économie énergétique",
+                              "Applications avancées en logistique pétrolière"
+                            ],
+                            Doctorat: [
+                              "Études avancées en gestion énergétique",
+                              "Recherche en innovation économique",
+                              "Développement durable dans l'industrie pétrolière"
+                            ]
+                          },
+                          "L'université d'État technique d'Omsk, 'la Faculté du pétrole et du gaz'": {
+                            Licence: [
+                              "Ingénierie pétrolière et gazière",
+                              "Technologies de production énergétique",
+                              "Gestion des infrastructures pétrolières",
+                              "Géologie des hydrocarbures"
+                            ],
+                            Master: [
+                              "Recherche en production énergétique durable",
+                              "Gestion stratégique des projets pétroliers",
+                              "Applications avancées en géologie des hydrocarbures"
+                            ],
+                            Doctorat: [
+                              "Études avancées en ingénierie énergétique",
+                              "Recherche en technologies pétrolières innovantes",
+                              "Gestion des systèmes énergétiques complexes"
+                            ]
+                          },
+
+                  
+                            "L'université d'État technique de Perm, 'la Faculté du pétrole et du gaz'": {
+                              Licence: [
+                                "Ingénierie pétrolière et gazière",
+                                "Technologies de forage",
+                                "Gestion des ressources énergétiques",
+                                "Géologie pétrolière"
+                              ],
+                              Master: [
+                                "Gestion avancée des projets pétroliers",
+                                "Technologies innovantes en exploration gazière",
+                                "Recherche en géosciences appliquées"
+                              ],
+                              Doctorat: [
+                                "Études avancées en ingénierie pétrolière",
+                                "Recherche en technologies de forage",
+                                "Innovation en gestion des ressources énergétiques"
+                              ]
+                            }
+                          ,                          
+                                                
+
+
+
+
+
+
+
+
                     "L'université d'État de Sakhaline, 'la Faculté du pétrole et du gaz'": {
                       Licence: [
                         "Exploitation pétrolière et marine",
@@ -8643,562 +8885,6 @@ export const mockData = {
         ]
       },
  ///////////////////////////////
-
-  "L'académie d'aquarelle et les beaux arts de Moscou": {
-    Licence: [
-      "Peinture et aquarelle",
-      "Arts graphiques",
-      "Design artistique",
-      "Histoire de l'art"
-    ],
-    Master: [
-      "Applications avancées en peinture",
-      "Recherche en arts graphiques",
-      "Design et innovation artistique"
-    ],
-    Doctorat: [
-      "Études avancées en histoire de l'art",
-      "Recherche en techniques artistiques",
-      "Innovation en arts visuels"
-    ]
-  },
-  "L'académie d'État de la culture et les arts d'Altaï": {
-    Licence: [
-      "Arts visuels",
-      "Musique et composition",
-      "Théâtre et dramaturgie",
-      "Gestion culturelle"
-    ],
-    Master: [
-      "Applications avancées en arts visuels",
-      "Recherche en musique et composition",
-      "Gestion stratégique des institutions culturelles"
-    ],
-    Doctorat: [
-      "Études avancées en dramaturgie",
-      "Recherche en gestion culturelle",
-      "Innovation en arts performatifs"
-    ]
-  },
-  "L'université d'État de la culture et les arts de Belgorod": {
-    Licence: [
-      "Arts visuels et numériques",
-      "Musique et interprétation",
-      "Théâtre et cinéma",
-      "Gestion des arts"
-    ],
-    Master: [
-      "Applications avancées en arts numériques",
-      "Recherche en interprétation musicale",
-      "Gestion des productions artistiques"
-    ],
-    Doctorat: [
-      "Études avancées en cinéma et théâtre",
-      "Recherche en gestion des arts",
-      "Innovation en arts numériques"
-    ]
-  },
-  "L'académie d'État des peintures de Voronej": {
-    Licence: [
-      "Peinture classique",
-      "Arts graphiques",
-      "Design et illustration",
-      "Histoire de l'art"
-    ],
-    Master: [
-      "Applications avancées en peinture classique",
-      "Recherche en design et illustration",
-      "Histoire et critique de l'art"
-    ],
-    Doctorat: [
-      "Études avancées en arts graphiques",
-      "Recherche en techniques de peinture",
-      "Innovation en design artistique"
-    ]
-  },
-  /////////////////////////////
-
-    "L'académie d'État de la culture et les arts de Sibérie orientale": {
-      Licence: [
-        "Arts visuels",
-        "Musique et composition",
-        "Théâtre et dramaturgie",
-        "Gestion culturelle"
-      ],
-      Master: [
-        "Applications avancées en arts visuels",
-        "Recherche en musique et composition",
-        "Gestion stratégique des institutions culturelles"
-      ],
-      Doctorat: [
-        "Études avancées en dramaturgie",
-        "Recherche en gestion culturelle",
-        "Innovation en arts performatifs"
-      ]
-    },
-    "L'université d'État panrusse de la cinématographie S.A.Gerasimov": {
-      Licence: [
-        "Cinématographie",
-        "Production de films",
-        "Scénarisation",
-        "Histoire du cinéma"
-      ],
-      Master: [
-        "Applications avancées en production cinématographique",
-        "Recherche en scénarisation",
-        "Gestion des projets cinématographiques"
-      ],
-      Doctorat: [
-        "Études avancées en histoire du cinéma",
-        "Recherche en techniques cinématographiques",
-        "Innovation en production de films"
-      ]
-    },
-    "L'école supérieure des arts de Saint-Pétersbourg": {
-      Licence: [
-        "Peinture classique",
-        "Arts graphiques",
-        "Design et illustration",
-        "Histoire de l'art"
-      ],
-      Master: [
-        "Applications avancées en peinture classique",
-        "Recherche en design et illustration",
-        "Histoire et critique de l'art"
-      ],
-      Doctorat: [
-        "Études avancées en arts graphiques",
-        "Recherche en techniques de peinture",
-        "Innovation en design artistique"
-      ]
-    },
-    "L'école supérieure théâtrale M.S.Schepkin": {
-      Licence: [
-        "Arts dramatiques",
-        "Interprétation théâtrale",
-        "Mise en scène",
-        "Histoire du théâtre"
-      ],
-      Master: [
-        "Applications avancées en mise en scène",
-        "Recherche en interprétation théâtrale",
-        "Gestion des productions théâtrales"
-      ],
-      Doctorat: [
-        "Études avancées en histoire du théâtre",
-        "Recherche en techniques dramatiques",
-        "Innovation en arts performatifs"
-      ]
-    },
-
-    //////////////////////
-
-      "L'institut d'État industrielle d'art de Gzhel": {
-        Licence: [
-          "Design industriel",
-          "Arts appliqués",
-          "Céramique et porcelaine",
-          "Histoire de l'art industriel"
-        ],
-        Master: [
-          "Applications avancées en design industriel",
-          "Recherche en arts appliqués",
-          "Innovation en céramique et porcelaine"
-        ],
-        Doctorat: [
-          "Études avancées en design industriel",
-          "Recherche en techniques artistiques appliquées",
-          "Développement de matériaux innovants"
-        ]
-      },
-      "L'académie d'État de la culture slave": {
-        Licence: [
-          "Langues et littératures slaves",
-          "Histoire et civilisation slave",
-          "Arts et traditions populaires",
-          "Gestion culturelle"
-        ],
-        Master: [
-          "Applications avancées en études slaves",
-          "Recherche en histoire et civilisation",
-          "Gestion stratégique des institutions culturelles"
-        ],
-        Doctorat: [
-          "Études avancées en langues et littératures slaves",
-          "Recherche en patrimoine culturel slave",
-          "Innovation en gestion culturelle"
-        ]
-      },
-      "L'académie d'État classique Majmonid": {
-        Licence: [
-          "Philosophie classique",
-          "Littérature et arts classiques",
-          "Histoire des idées",
-          "Gestion culturelle"
-        ],
-        Master: [
-          "Applications avancées en philosophie classique",
-          "Recherche en littérature et arts classiques",
-          "Gestion des institutions culturelles"
-        ],
-        Doctorat: [
-          "Études avancées en histoire des idées",
-          "Recherche en philosophie classique",
-          "Innovation en gestion culturelle"
-        ]
-      },
-      //////////////////////////
-
-        "L'académie d'État des arts d'Extrême Orient": {
-          Licence: [
-            "Arts visuels",
-            "Musique et composition",
-            "Théâtre et dramaturgie",
-            "Gestion culturelle"
-          ],
-          Master: [
-            "Applications avancées en arts visuels",
-            "Recherche en musique et composition",
-            "Gestion stratégique des institutions culturelles"
-          ],
-          Doctorat: [
-            "Études avancées en dramaturgie",
-            "Recherche en gestion culturelle",
-            "Innovation en arts performatifs"
-          ]
-        },
-        "L'académie d'État textile d'Ivanovo": {
-          Licence: [
-            "Design textile",
-            "Technologies de production textile",
-            "Gestion industrielle",
-            "Histoire du textile"
-          ],
-          Master: [
-            "Applications avancées en design textile",
-            "Recherche en technologies textiles",
-            "Gestion stratégique des industries textiles"
-          ],
-          Doctorat: [
-            "Études avancées en design textile",
-            "Recherche en innovation textile",
-            "Développement durable dans l'industrie textile"
-          ]
-        },
-        "Le conservatoire d'État de Kazan (l'Académie) N.G.Jiganov": {
-          Licence: [
-            "Interprétation musicale",
-            "Composition",
-            "Direction d'orchestre",
-            "Musicologie"
-          ],
-          Master: [
-            "Applications avancées en interprétation musicale",
-            "Recherche en composition musicale",
-            "Gestion des projets musicaux"
-          ],
-          Doctorat: [
-            "Études avancées en musicologie",
-            "Recherche en techniques musicales",
-            "Innovation en production musicale"
-          ]
-        },
-        "L'université d'État de la culture et les arts de Kazan": {
-          Licence: [
-            "Arts visuels et numériques",
-            "Musique et interprétation",
-            "Théâtre et cinéma",
-            "Gestion des arts"
-          ],
-          Master: [
-            "Applications avancées en arts numériques",
-            "Recherche en interprétation musicale",
-            "Gestion des productions artistiques"
-          ],
-          Doctorat: [
-            "Études avancées en cinéma et théâtre",
-            "Recherche en gestion des arts",
-            "Innovation en arts numériques"
-          ]
-        },
-        //////////////////////////
-          "L'université d'État de la culture et les arts de Kémérovo": {
-            Licence: [
-              "Arts visuels",
-              "Musique et composition",
-              "Théâtre et dramaturgie",
-              "Gestion culturelle"
-            ],
-            Master: [
-              "Applications avancées en arts visuels",
-              "Recherche en musique et composition",
-              "Gestion stratégique des institutions culturelles"
-            ],
-            Doctorat: [
-              "Études avancées en dramaturgie",
-              "Recherche en gestion culturelle",
-              "Innovation en arts performatifs"
-            ]
-          },
-          "L'académie d'État industrielle d'art de Moscou S.G.Stroganov": {
-            Licence: [
-              "Design industriel",
-              "Arts appliqués",
-              "Céramique et porcelaine",
-              "Histoire de l'art industriel"
-            ],
-            Master: [
-              "Applications avancées en design industriel",
-              "Recherche en arts appliqués",
-              "Innovation en céramique et porcelaine"
-            ],
-            Doctorat: [
-              "Études avancées en design industriel",
-              "Recherche en techniques artistiques appliquées",
-              "Développement de matériaux innovants"
-            ]
-          },
-          "Le conservatoire (L'université) de Moscou": {
-            Licence: [
-              "Interprétation musicale",
-              "Composition",
-              "Direction d'orchestre",
-              "Musicologie"
-            ],
-            Master: [
-              "Applications avancées en interprétation musicale",
-              "Recherche en composition musicale",
-              "Gestion des projets musicaux"
-            ],
-            Doctorat: [
-              "Études avancées en musicologie",
-              "Recherche en techniques musicales",
-              "Innovation en production musicale"
-            ]
-          },
-
-          ////////////////////////
-  "L'université d'État du design et la technologie de Moscou": {
-    Licence: [
-      "Design industriel",
-      "Technologies textiles",
-      "Gestion des systèmes industriels",
-      "Économie et gestion"
-    ],
-    Master: [
-      "Applications avancées en design textile",
-      "Recherche en technologies industrielles",
-      "Gestion stratégique des industries créatives"
-    ],
-    Doctorat: [
-      "Études avancées en design industriel",
-      "Recherche en innovation textile",
-      "Développement durable dans l'industrie"
-    ]
-  },
-  "L'université d'État de la presse de Moscou Ivan Fedorov": {
-    Licence: [
-      "Journalisme",
-      "Édition et publication",
-      "Relations publiques",
-      "Communication de masse"
-    ],
-    Master: [
-      "Applications avancées en journalisme",
-      "Recherche en communication de masse",
-      "Gestion des médias"
-    ],
-    Doctorat: [
-      "Études avancées en édition",
-      "Recherche en journalisme numérique",
-      "Innovation en communication médiatique"
-    ]
-  },
-  "L'institut d'État de l'art et la culture de Perm": {
-    Licence: [
-      "Arts visuels",
-      "Musique et composition",
-      "Théâtre et dramaturgie",
-      "Gestion culturelle"
-    ],
-    Master: [
-      "Applications avancées en arts visuels",
-      "Recherche en musique et composition",
-      "Gestion stratégique des institutions culturelles"
-    ],
-    Doctorat: [
-      "Études avancées en dramaturgie",
-      "Recherche en gestion culturelle",
-      "Innovation en arts performatifs"
-    ]
-  },
-  "Le conservatoire d'État de Pétrozavodsk A.K.Glazounov": {
-    Licence: [
-      "Interprétation musicale",
-      "Composition",
-      "Direction d'orchestre",
-      "Musicologie"
-    ],
-    Master: [
-      "Applications avancées en interprétation musicale",
-      "Recherche en composition musicale",
-      "Gestion des projets musicaux"
-    ],
-    Doctorat: [
-      "Études avancées en musicologie",
-      "Recherche en techniques musicales",
-      "Innovation en production musicale"
-    ]
-  },
-  /////////////////////////
-
-    "Le conservatoire d'État de Rostov S.V.Rakhmaninov": {
-      Licence: [
-        "Interprétation musicale",
-        "Composition",
-        "Direction d'orchestre",
-        "Musicologie"
-      ],
-      Master: [
-        "Applications avancées en interprétation musicale",
-        "Recherche en composition musicale",
-        "Gestion des projets musicaux"
-      ],
-      Doctorat: [
-        "Études avancées en musicologie",
-        "Recherche en techniques musicales",
-        "Innovation en production musicale"
-      ]
-    },
-    "L'institut russe de textile et de l'industrie légère": {
-      Licence: [
-        "Design textile",
-        "Technologies de production textile",
-        "Gestion industrielle",
-        "Science des matériaux"
-      ],
-      Master: [
-        "Applications avancées en design textile",
-        "Recherche en technologies textiles",
-        "Gestion stratégique des industries textiles"
-      ],
-      Doctorat: [
-        "Études avancées en innovation textile",
-        "Recherche en matériaux avancés",
-        "Développement durable dans l'industrie textile"
-      ]
-    },
-    "L'académie d'État de la culture et les arts de Samara": {
-      Licence: [
-        "Arts visuels",
-        "Musique et composition",
-        "Théâtre et dramaturgie",
-        "Gestion culturelle"
-      ],
-      Master: [
-        "Applications avancées en arts visuels",
-        "Recherche en musique et composition",
-        "Gestion stratégique des institutions culturelles"
-      ],
-      Doctorat: [
-        "Études avancées en dramaturgie",
-        "Recherche en gestion culturelle",
-        "Innovation en arts performatifs"
-      ]
-    },
-    "L'académie d'État du théâtre de Saint-Pétersbourg": {
-      Licence: [
-        "Arts dramatiques",
-        "Interprétation théâtrale",
-        "Mise en scène",
-        "Histoire du théâtre"
-      ],
-      Master: [
-        "Applications avancées en mise en scène",
-        "Recherche en interprétation théâtrale",
-        "Gestion des productions théâtrales"
-      ],
-      Doctorat: [
-        "Études avancées en histoire du théâtre",
-        "Recherche en techniques dramatiques",
-        "Innovation en arts performatifs"
-      ]
-    },
-    ///////////////////////////:
-      "Le conservatoire d'État de Saint-Pétersbourg N.A.Rimsky-Korsakov": {
-        Licence: [
-          "Interprétation musicale",
-          "Composition",
-          "Direction d'orchestre",
-          "Musicologie"
-        ],
-        Master: [
-          "Applications avancées en interprétation musicale",
-          "Recherche en composition musicale",
-          "Gestion des projets musicaux"
-        ],
-        Doctorat: [
-          "Études avancées en musicologie",
-          "Recherche en techniques musicales",
-          "Innovation en production musicale"
-        ]
-      },
-      "L'université d'État du cinéma et la télévision de Saint-Pétersbourg": {
-        Licence: [
-          "Cinématographie",
-          "Production de films",
-          "Scénarisation",
-          "Technologies audiovisuelles"
-        ],
-        Master: [
-          "Applications avancées en production cinématographique",
-          "Recherche en scénarisation",
-          "Gestion des projets audiovisuels"
-        ],
-        Doctorat: [
-          "Études avancées en technologies audiovisuelles",
-          "Recherche en cinéma et télévision",
-          "Innovation en production multimédia"
-        ]
-      },
-      "L'université d'État de la technologie et le design de Saint-Pétersbourg": {
-        Licence: [
-          "Design industriel",
-          "Technologies textiles",
-          "Gestion des systèmes industriels",
-          "Économie et gestion"
-        ],
-        Master: [
-          "Applications avancées en design textile",
-          "Recherche en technologies industrielles",
-          "Gestion stratégique des industries créatives"
-        ],
-        Doctorat: [
-          "Études avancées en design industriel",
-          "Recherche en innovation textile",
-          "Développement durable dans l'industrie"
-        ]
-      },
-      "Le conservatoire d'État de Saratov L.V.Sobinov": {
-        Licence: [
-          "Interprétation musicale",
-          "Composition",
-          "Direction d'orchestre",
-          "Musicologie"
-        ],
-        Master: [
-          "Applications avancées en interprétation musicale",
-          "Recherche en composition musicale",
-          "Gestion des projets musicaux"
-        ],
-        Doctorat: [
-          "Études avancées en musicologie",
-          "Recherche en techniques musicales",
-          "Innovation en production musicale"
-        ]
-      }    
-    
-
               
           
     
@@ -9218,18 +8904,13 @@ export const mockData = {
   
           
           
-  
-  
-
+    
 
 
 
 
     
-            
-
-
-
+  
 
 
 ////////////////////////////////////////
@@ -9238,39 +8919,7 @@ export const mockData = {
 
 
         // Ajoutez d'autres universités et leurs niveaux ici
-    },
+    }
 
-
-
-    accommodations: [
-        { type: "Chambre Simple", capacity: "1 personne", price: 150000 },
-        { type: "Chambre Double", capacity: "2 personnes", price: 100000 },
-        { type: "Studio", capacity: "1 personne", price: 250000 },
-        { type: "Appartement T1", capacity: "1-2 personnes", price: 350000 },
-        { type: "Appartement T2", capacity: "2-3 personnes", price: 450000 },
-        { type: "Résidence Universitaire", capacity: "1 personne", price: 80000 }
-    ],
-
-
-    additionalServices: [
-        {
-            id: "passport",
-            name: "Passeport",
-            description: "Aide à l'obtention d'un passeport",
-            price: 50000
-        },
-        {
-            id: "translation",
-            name: "Traduction",
-            description: "Traduction de vos certificats et diplômes",
-            price: 30000
-        },
-        {
-            id: "airport",
-            name: "Accueil à l'aéroport",
-            description: "Service d'accueil et suivi à l'aéroport",
-            price: 300000
-        }
-    ],
-    studyLevels: ["Licence", "Master", "Doctorat"]
 };
+

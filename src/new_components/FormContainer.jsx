@@ -1,5 +1,7 @@
 "use client"
 
+import { SERVICE_IDS } from './lib/data';
+
 import React from 'react';
 import { useState } from "react"
 import { GraduationCap } from "lucide-react"
@@ -10,6 +12,8 @@ import AdditionalServicesForm from "./form_steep/AdditionalServiceForm.jsx"
 import SummaryForm from "./form_steep/SummuryForm.jsx"
 import StepIndicator from "./SteepIndicator.jsx"
 import { mockData } from "./lib/data"
+
+
 
 
 export default function FormContainer() {
@@ -24,12 +28,15 @@ export default function FormContainer() {
         phone: "",
         parentName: "",
         parentContact: "",
+        
 
         // Étape 2: Programme d'étude
         country: "",
         university: "",
         field: "",
         level: "",
+        serviceMandatoryPrice: 0, // <-- Ajoute cette ligne
+
 
         // Étape 3: Hébergement
         accommodation: null,
@@ -115,6 +122,12 @@ export default function FormContainer() {
                 newErrors.accommodation = "Le choix d'hébergement est requis"
                 isValid = false
             }
+        } else if (step === 4) {
+            // Validation des services complémentaires
+            if (!formData.selectedServices) {
+                newErrors.selectedServices = "Le service obligatoire doit être sélectionné.";
+                isValid = false;
+            }
         }
 
         setErrors(newErrors)
@@ -131,13 +144,34 @@ export default function FormContainer() {
         setCurrentStep(currentStep - 1)
     }
 
+
+
     const handleChange = (e) => {
-        const { name, value, type, checked } = e.target
-        setFormData({
-            ...formData,
-            [name]: type === "checkbox" ? checked : value,
-        })
-    }
+        const { name, value, type, checked } = e.target;
+        const newValue = type === "checkbox" ? checked : value;
+    
+        setFormData(prev => {
+            let updatedServices = [...prev.selectedServices];
+    
+            if (name === "university") {
+                if (!updatedServices) {
+                    updatedServices;
+                }
+            }
+    
+            return {
+                ...prev,
+                [name]: newValue,
+                selectedServices: updatedServices
+            };
+        });
+    };
+    
+
+
+
+
+    
 
     const handleAccommodationSelect = (accommodation) => {
         setFormData({
@@ -225,7 +259,4 @@ export default function FormContainer() {
         </div>
     )
 }
-
-
-
 

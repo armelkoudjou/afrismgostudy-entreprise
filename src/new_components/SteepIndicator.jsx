@@ -4,9 +4,10 @@ export default function StepIndicator({ currentStep }) {
     const steps = [
         { number: 1, label: "Informations Personnelles" },
         { number: 2, label: "Choix du Programme" },
-        { number: 3, label: "Hébergement" },
+        { number: 3, label: "Choix du Logement" },
         { number: 4, label: "Services Complémentaires" },
         { number: 5, label: "Résumé" },
+
     ]
 
     return (
