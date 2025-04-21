@@ -1,7 +1,7 @@
 import { Document, Page, Text, View, StyleSheet } from "@react-pdf/renderer";
 import React from 'react';
 
-// Palette de couleurs professionnelles
+// Palette de couleurs modernes
 const COLORS = {
     primary: '#2D3748',
     secondary: '#4F46E5',
@@ -15,8 +15,7 @@ const styles = StyleSheet.create({
     page: {
         padding: 40,
         fontFamily: "Helvetica-Bold",
-        backgroundColor: '#FFFFFF',
-        position: 'relative'
+        backgroundColor: '#FFFFFF'
     },
     header: {
         marginBottom: 25,
@@ -80,6 +79,40 @@ const styles = StyleSheet.create({
         color: COLORS.text,
         fontWeight: 'semibold'
     },
+    serviceRow: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        paddingVertical: 8,
+        borderBottom: `1 solid ${COLORS.lightGray}`
+    },
+    serviceName: {
+        fontSize: 12,
+        fontWeight: 'bold',
+        color: COLORS.primary
+    },
+    servicePrice: {
+        fontSize: 12,
+        fontWeight: 'bold',
+        color: COLORS.secondary
+    },
+    totalRow: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        marginTop: 15,
+        paddingTop: 12,
+        borderTop: `2 solid ${COLORS.secondary}`
+    },
+    signatureSection: {
+        marginTop: 30,
+        paddingTop: 20,
+        borderTop: `2 dashed ${COLORS.darkGray}`
+    },
+    signatureBox: {
+        height: 40,
+        width: 200,
+        borderBottom: `1 solid ${COLORS.darkGray}`,
+        marginTop: 5
+    },
     footer: {
         position: "absolute",
         bottom: 25,
@@ -91,24 +124,27 @@ const styles = StyleSheet.create({
         paddingVertical: 8,
         backgroundColor: COLORS.lightGray
     },
+    logo: {
+        width: 80,
+        height: 80,
+        marginRight: 15
+    },
     watermark: {
         position: 'absolute',
-        opacity: 0.05, // Faible opacité pour ne pas gêner la lecture
+        opacity: 0.1,
         fontSize: 72,
         color: COLORS.primary,
         transform: 'rotate(-45deg)',
         left: 100,
-        top: 400,
-        zIndex: -1, // Assurer que l'empreinte est derrière le contenu
-        letterSpacing: 4
+        top: 400
     }
 });
 
 const PDFDocument = ({ formData, mockData }) => (
     <Document>
         <Page size="A4" style={styles.page}>
-            {/* Filigrane professionnel */}
-            <Text style={styles.watermark}>AGENCE D'ÉTUDES INTERNATIONALES</Text>
+            {/* Filigrane */}
+            <Text style={styles.watermark}>CONFIDENTIEL  MARLEY AFRISM</Text>
 
             {/* En-tête */}
             <View style={styles.header}>
@@ -183,7 +219,70 @@ const PDFDocument = ({ formData, mockData }) => (
                 </View>
             </View>
 
+            {/* Section Hébergement */}
+            <View style={styles.section}>
+                <Text style={styles.sectionTitle}>Détails du Logement</Text>
+                <View style={styles.row}>
+                    <View style={styles.column}>
+                        <Text style={styles.value}>{formData.accommodation?.type}</Text>
+                        <Text style={[styles.label, {marginTop: 5}]}>Capacité: {formData.accommodation?.capacity}</Text>
+                    </View>
+                    <View style={styles.column}>
+                        <Text style={styles.label}>Coût Mensuel</Text>
+                        <Text style={[styles.value, {color: COLORS.secondary}]}>
+                            {formData.accommodation?.price?.toLocaleString()} FCFA
+                        </Text>
+                    </View>
+                </View>
+            </View>
+
+            {/* Section Services */}
+            <View style={styles.section}>
+                <Text style={styles.sectionTitle}>Services Additionnels</Text>
+                {formData.selectedServices?.length > 0 ? (
+                    <>
+                        {formData.selectedServices.map((serviceId, index) => {
+                            const service = mockData.additionalServices.find((s) => s.id === serviceId);
+                            return (
+                                <View key={index} style={styles.serviceRow}>
+                                    <Text style={styles.serviceName}>{service?.name}</Text>
+                                    <Text style={styles.servicePrice}>{service?.price?.toLocaleString()} FCFA</Text>
+                                </View>
+                            );
+                        })}
+                        <View style={styles.totalRow}>
+                            <Text style={styles.totalLabel}>Total Services</Text>
+                            <Text style={[styles.totalValue, {color: COLORS.secondary}]}>
+                                {formData.selectedServices
+                                    .reduce((total, serviceId) => total +
+                                        (mockData.additionalServices.find(s => s.id === serviceId)?.price || 0), 0)
+                                    .toLocaleString()} FCFA
+                            </Text>
+                        </View>
+                    </>
+                ) : (
+                    <Text style={[styles.value, {color: COLORS.darkGray}]}>Aucun service supplémentaire sélectionné</Text>
+                )}
+            </View>
+
             {/* Signature */}
+            <View style={styles.signatureSection}>
+                <Text style={[styles.label, {marginBottom: 15}]}>
+                    Déclaration sur l'honneur - Je certifie l'exactitude des informations fournies.
+                </Text>
+                <View style={styles.row}>
+                    <View style={styles.column}>
+                        <Text style={styles.label}>Fait à ____________________</Text>
+                        <Text style={styles.label}>Le {new Date().toLocaleDateString()}</Text>
+                    </View>
+                    <View style={styles.column}>
+                        <Text style={styles.label}>Signature de l'étudiant</Text>
+                        <View style={styles.signatureBox} />
+                    </View>
+                </View>
+            </View>
+
+            {/* Pied de page */}
             <View style={styles.footer}>
                 <Text>Agence d'Études à l'Étranger • contact@agence-etranger.com • +33 1 23 45 67 89</Text>
                 <Text>Imprimé le {new Date().toLocaleDateString()} • Document protégé par droits d'auteur</Text>
@@ -193,3 +292,4 @@ const PDFDocument = ({ formData, mockData }) => (
 );
 
 export default PDFDocument;
+
