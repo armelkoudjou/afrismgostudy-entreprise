@@ -1,32 +1,35 @@
 "use client";
 import React, { useState, useEffect } from "react";
 
-// Frais par catégorie (ajoute ou modifie selon tes besoins)
-
-
-
 export default function ProgramSelectionForm({ formData, handleChange, nextStep, prevStep, errors, mockData }) {
     const [subStep, setSubStep] = useState(1);
     const [availableCategories, setAvailableCategories] = useState([]);
     const [availableUniversities, setAvailableUniversities] = useState([]);
     const [availableFields, setAvailableFields] = useState([]);
+    const [searchQuery, setSearchQuery] = useState('');
+
     const tuitionFees = {
         "Les Universites Medicales de la Russie": 50000,
-          "Les Universites D'ingenieur Et Techniques de la Russie": 60000,
-          "Les Universites D’economie de la Russie": 55000,
-          "Les Universites Agricoles / Agraire de la Russie": 52000,
-          "Les Universites D'architecture Et De La Construction de la Russie": 58000,
-          "Les Universites Chimiques Et Technologiques de la Russie": 58000,
-          "Les Universites de La Geologie, L'industrie Miniere Et La Metallurgie de la Russie": 58000,
-          "Les Universites Petro-Gaziers de la Russie": 58000,
-          "Les Universites De La Technologie D’alimentation de la Russie": 58000,
-          "Les Universites D’industrie Forestiere de la Russie": 58000,
-          "Les Universites Marines Et Maritimes de la Russie": 58000,
-          "Les Universites D’aviation de la Russie": 58000,
-          "Les Universites Universites D'état de la Russie": 58000
-        };
-        
+        "Les Universites D'ingenieur Et Techniques de la Russie": 60000,
+        "Les Universites D’economie de la Russie": 55000,
+        "Les Universites Agricoles / Agraire de la Russie": 52000,
+        "Les Universites D'architecture Et De La Construction de la Russie": 58000,
+        "Les Universites Chimiques Et Technologiques de la Russie": 58000,
+        "Les Universites de La Geologie, L'industrie Miniere Et La Metallurgie de la Russie": 58000,
+        "Les Universites Petro-Gaziers de la Russie": 58000,
+        "Les Universites De La Technologie D’alimentation de la Russie": 58000,
+        "Les Universites D’industrie Forestiere de la Russie": 58000,
+        "Les Universites Marines Et Maritimes de la Russie": 58000,
+        "Les Universites D’aviation de la Russie": 58000,
+        "Les Universites Universites D'état de la Russie": 58000
+    };
 
+    const universitiesTuitionOverrides = {
+        "L'université d'État médicale de Kazan": 70000,
+        "L'université d'État technique de Tambov": 1067085,
+        "L'université d'État médicale de Moscou": 90000,
+        "l'université Technologique d'État de Tambov": 1067085,
+    };
 
     useEffect(() => {
         if (formData.country) {
@@ -39,25 +42,10 @@ export default function ProgramSelectionForm({ formData, handleChange, nextStep,
     useEffect(() => {
         if (formData.category) {
             const universities = mockData?.universities?.[formData.category];
-            
-            const tuitionFee = tuitionFees[formData.category] || 0;
-            handleChange({ target: { name: "tuitionFee", value: tuitionFee } });
-
-            
-            if (universities) {
-                setAvailableUniversities(universities);
-            } else {
-                console.error(`La catégorie "${formData.category}" n'a pas de correspondance dans mockData.universities.`);
-                setAvailableUniversities([]);
-            }
+            setAvailableUniversities(universities || []);
         } else {
             setAvailableUniversities([]);
         }
-    }, [formData.category, mockData]);
-
-    useEffect(() => {
-        console.log("Catégorie sélectionnée :", formData.category);
-        console.log("Universités disponibles :", mockData?.universities?.[formData.category]);
     }, [formData.category, mockData]);
 
     useEffect(() => {
@@ -69,7 +57,10 @@ export default function ProgramSelectionForm({ formData, handleChange, nextStep,
     }, [formData.university, formData.level, mockData]);
 
     const handleUniversitySelect = (university) => {
-        const tuitionFee = tuitionFees[formData.category] || 0;
+        let tuitionFee = universitiesTuitionOverrides[university];
+        if (!tuitionFee) {
+            tuitionFee = tuitionFees[formData.category] || 0;
+        }
         handleChange({ target: { name: "university", value: university } });
         handleChange({ target: { name: "tuitionFee", value: tuitionFee } });
     };
@@ -80,7 +71,6 @@ export default function ProgramSelectionForm({ formData, handleChange, nextStep,
         if (subStep === 3 && !formData.university) return;
         if (subStep === 4 && !formData.level) return;
         if (subStep === 5 && !formData.field) return;
-
         if (subStep < 5) {
             setSubStep(subStep + 1);
         } else {
@@ -108,11 +98,7 @@ export default function ProgramSelectionForm({ formData, handleChange, nextStep,
                                 <div
                                     key={country}
                                     onClick={() => handleChange({ target: { name: "country", value: country } })}
-                                    className={`p-4 border rounded-md cursor-pointer ${
-                                        formData.country === country
-                                            ? "border-indigo-500 bg-indigo-50"
-                                            : "border-gray-300 hover:border-indigo-300"
-                                    }`}
+                                    className={`p-4 border rounded-md cursor-pointer ${formData.country === country ? "border-indigo-500 bg-indigo-50" : "border-gray-300 hover:border-indigo-300"}`}
                                 >
                                     <div className="font-medium">{country}</div>
                                 </div>
@@ -131,11 +117,7 @@ export default function ProgramSelectionForm({ formData, handleChange, nextStep,
                                 <div
                                     key={category}
                                     onClick={() => handleChange({ target: { name: "category", value: category } })}
-                                    className={`p-4 border rounded-md cursor-pointer ${
-                                        formData.category === category
-                                            ? "border-indigo-500 bg-indigo-50"
-                                            : "border-gray-300 hover:border-indigo-300"
-                                    }`}
+                                    className={`p-4 border rounded-md cursor-pointer ${formData.category === category ? "border-indigo-500 bg-indigo-50" : "border-gray-300 hover:border-indigo-300"}`}
                                 >
                                     <div className="font-medium">{category}</div>
                                 </div>
@@ -144,29 +126,61 @@ export default function ProgramSelectionForm({ formData, handleChange, nextStep,
                         {errors.category && <p className="mt-1 text-sm text-red-600">{errors.category}</p>}
                     </div>
                 );
-            case 3:
-                return (
-                    <div className="space-y-4">
-                        <h3 className="text-lg font-medium text-gray-900">Sélection de l'Université</h3>
-                        <p className="text-sm text-gray-600">Choisissez l'université où vous souhaitez étudier</p>
-                        <div className="grid grid-cols-1 gap-4">
-                            {availableUniversities.map((university) => (
+
+                case 3:
+                    const filteredUniversities = availableUniversities.filter(university =>
+                        university.toLowerCase().includes(searchQuery.toLowerCase())
+                    );
+                
+                    return (
+                        <div className="space-y-4">
+                            <h3 className="text-lg font-medium text-gray-900">Sélection de l'Université</h3>
+                            <p className="text-sm text-gray-600">Choisissez l'université où vous souhaitez étudier</p>
+                            <input
+                                type="text"
+                                placeholder="Rechercher une université..."
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                                className="w-full px-3 py-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            />
+                
+                            {formData.university && (
                                 <div
-                                    key={university}
-                                    onClick={() => handleUniversitySelect(university)}
-                                    className={`p-4 border rounded-md cursor-pointer ${
-                                        formData.university === university
-                                            ? "border-indigo-500 bg-indigo-50"
-                                            : "border-gray-300 hover:border-indigo-300"
-                                    }`}
+                                    className="p-4 bg-gray-50 border rounded-md opacity-0 translate-y-2 transition-all duration-300 ease-out"
+                                    style={{ opacity: 1, transform: 'translateY(0)' }}
                                 >
-                                    <div className="font-medium">{university}</div>
+                                    <h4 className="text-md font-medium text-gray-900">Frais de scolarité</h4>
+                                    <p className="text-sm text-gray-600">
+                                        {(universitiesTuitionOverrides[formData.university] || tuitionFees[formData.category] || 0).toLocaleString()} FCFA
+                                    </p>
                                 </div>
-                            ))}
+                            )}
+                
+                            {filteredUniversities.length === 0 ? (
+                                <p className="text-sm text-gray-500">Aucune université trouvée.</p>
+                            ) : (
+                                <div className="grid grid-cols-1 gap-4">
+                                    {filteredUniversities.map((university) => (
+                                        <div
+                                            key={university}
+                                            onClick={() => handleUniversitySelect(university)}
+                                            className={`p-4 border rounded-md cursor-pointer ${
+                                                formData.university === university
+                                                    ? "border-indigo-500 bg-indigo-50"
+                                                    : "border-gray-300 hover:border-indigo-300"
+                                            }`}
+                                        >
+                                            <div className="font-medium">{university}</div>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                
+                            {errors.university && <p className="mt-1 text-sm text-red-600">{errors.university}</p>}
                         </div>
-                        {errors.university && <p className="mt-1 text-sm text-red-600">{errors.university}</p>}
-                    </div>
-                );
+                    );
+                
+
             case 4:
                 return (
                     <div className="space-y-4">
@@ -177,11 +191,7 @@ export default function ProgramSelectionForm({ formData, handleChange, nextStep,
                                 <div
                                     key={level}
                                     onClick={() => handleChange({ target: { name: "level", value: level } })}
-                                    className={`p-4 border rounded-md cursor-pointer ${
-                                        formData.level === level
-                                            ? "border-indigo-500 bg-indigo-50"
-                                            : "border-gray-300 hover:border-indigo-300"
-                                    }`}
+                                    className={`p-4 border rounded-md cursor-pointer ${formData.level === level ? "border-indigo-500 bg-indigo-50" : "border-gray-300 hover:border-indigo-300"}`}
                                 >
                                     <div className="font-medium">{level}</div>
                                 </div>
@@ -200,11 +210,7 @@ export default function ProgramSelectionForm({ formData, handleChange, nextStep,
                                 <div
                                     key={field}
                                     onClick={() => handleChange({ target: { name: "field", value: field } })}
-                                    className={`p-4 border rounded-md cursor-pointer ${
-                                        formData.field === field
-                                            ? "border-indigo-500 bg-indigo-50"
-                                            : "border-gray-300 hover:border-indigo-300"
-                                    }`}
+                                    className={`p-4 border rounded-md cursor-pointer ${formData.field === field ? "border-indigo-500 bg-indigo-50" : "border-gray-300 hover:border-indigo-300"}`}
                                 >
                                     <div className="font-medium">{field}</div>
                                 </div>

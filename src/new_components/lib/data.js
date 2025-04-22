@@ -327,7 +327,8 @@ studyLevels: ["Licence", "Master", "Doctorat"],
                 "L'université d'État d’Yugorsk",
                 "L'université d'État du Sud d'Oural",
                 "L'université du Sud fédérale",
-                "L'université d'État d'Iaroslavl P.G.Demidov"
+                "L'université d'État d'Iaroslavl P.G.Demidov",
+                "l'université Technologique d'État de Tambov"
             ],
 
 
@@ -8885,7 +8886,48 @@ studyLevels: ["Licence", "Master", "Doctorat"],
         ]
       },
  ///////////////////////////////
-              
+      "l'université Technologique d'État de Tambov": {
+    Licence: [
+        "Architecture",
+        "Urbanisme",
+        "Systèmes et technologies de l'information",
+        "Informatique appliquée",
+        "Mécatronique et robotique",
+        "Ingénierie pétrolière et gazière",
+        "Économie",
+        "Management",
+        "Design (Design de l'environnement)"
+    ],
+    Master: [
+        "Architecture",
+        "Reconstruction et restauration du patrimoine architectural",
+        "Urbanisme",
+        "Construction",
+        "Informatique et génie informatique",
+        "Systèmes et technologies d'information",
+        "Radiotechnique",
+        "Technologies d’infocommunication et systèmes de communication",
+        "Thermoénergetique et thermotechnique",
+        "Électroénergétique et électrotechnique",
+        "Génie mécanique",
+        "Génie chimique",
+        "Agroingénierie",
+        "Analyse systémique et gestion",
+        "Gestion dans les systèmes techniques",
+        "Économie",
+        "Management",
+        "Publicité et relations publiques",
+        "Design (Design de l'environnement)"
+    ],
+    Doctorat: [
+        "Génie mécanique avancé",
+        "Technologies d'information avancées",
+        "Économie et gestion stratégique",
+        "Recherche en architecture et urbanisme",
+        "Électroénergétique et électrotechnique avancée"
+    ]
+}
+      
           
     
       
