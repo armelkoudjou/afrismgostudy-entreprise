@@ -2179,3 +2179,5 @@ export const tuitionFees = {
     }
     
   };
+
+  
