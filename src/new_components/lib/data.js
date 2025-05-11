@@ -74,7 +74,7 @@ studyLevels: ["Licence", "Master", "Doctorat"],
         Russie:[
             "Les Universites Medicales de la Russie",
             "Les Universites D'ingenieur Et Techniques de la Russie",
-            "Les Universites Universites D'état de la Russie",
+            "Les Universites  D'état de la Russie",
             "Les Universites Marines Et Maritimes de la Russie",
             "Les Universites D’aviation de la Russie",
             "Les Universites D’economie de la Russie",
@@ -168,7 +168,8 @@ studyLevels: ["Licence", "Master", "Doctorat"],
             "L'institut de médecine de Chkalovsk",
             "L'université d'État de la Tchouvachie, 'la Faculté de médecine'",
             "L'université d'État médicale sud d'Oural",
-            "L'université d'État médicale d'Iaroslavl"
+            "L'université d'État médicale d'Iaroslavl",
+            "L'université de médecine de la Volga"
         ]
         ,
         "Les Universites D'ingenieur Et Techniques de la Russie":[
@@ -245,7 +246,7 @@ studyLevels: ["Licence", "Master", "Doctorat"],
         ],
 
             "Les Universites Universites D'état de la Russie":[
-                "L'université d'État d’Adyguéens",
+                "L'université d'État d'Adyguée",
                 "L'université d'État d'Altaï",
                 "L'université d'État d'Amour",
                 "L'université d'État d'Astrakhan",
@@ -256,10 +257,9 @@ studyLevels: ["Licence", "Master", "Doctorat"],
                 "L'université d'État de la Bouriatie",
                 "L'université d'État de Vladimir Alexandre Grigoriévitch, Nikolay Grigoriévitch Stoletovy",
                 "L'université d'État de Volgograd",
-                "L'université d'État de Volga",
+                "L'université d'État de Technologie de la Volga",
                 "L'université d'État de Voronej",
                 "L'université d'État de Viatka",
-                "L'université d'État des mines d'Altaï",
                 "L'université d'État de Daghestan",
                 "L'université d'Extrême Orient fédérale",
                 "L'université d'État d'Ielets I.A.Bounin",
@@ -309,7 +309,7 @@ studyLevels: ["Licence", "Master", "Doctorat"],
                 "L'université sibérienne fédérale",
                 "L'université d'État de Sotchi",
                 "L'université d'État de Syktyvkar",
-                "L'université d'État de Tambov G.P.Derjavin",
+                "L'université d'État de Tambov G.R. Derjavine",
                 "L'université d'État de Tver",
                 "L'université nationale du Pacifique",
                 "L'université d'État de Togliatti",
@@ -507,8 +507,6 @@ studyLevels: ["Licence", "Master", "Doctorat"],
                 "L'université du sud fédérale, 'la Faculté de la chimie'"
             ],
 
-
-
  "Les Universites de La Geologie, L'industrie Miniere Et La Metallurgie de la Russie":[
     "L'université d'État de la Bachkirie, 'la Faculté de la géologie et la géomorphologie'",
     "L'université d'État technologique de Belgorod, 'la Faculté minière'",
@@ -631,9 +629,8 @@ studyLevels: ["Licence", "Master", "Doctorat"],
             Doctorat: ["Recherche Médicale", "Physique Théorique", "Mathématiques Pures", "Droit Comparé"]
         },
 
-
+        
         "L'université d'État technique de Tambov":{
-            
             Licence:  [
                 "Ecologie et gestion de la nature",
                 "Architecture (5 ans)",
@@ -2104,277 +2101,473 @@ studyLevels: ["Licence", "Master", "Doctorat"],
 
 
 
-    "L'université d'État d’Adyguéens": {
+    "L'université d'État d'Adyguée": {
       Licence: [
-        "Éducation et pédagogie",
-        "Langues étrangères",
-        "Géographie et environnement",
-        "Informatique et mathématiques appliquées"
-      ],
-      Master: [
-        "Éducation spécialisée",
-        "Géographie et durabilité",
-        "Technologies numériques en éducation"
-      ],
-      Doctorat: [
-        "Recherche en éducation et pédagogie",
-        "Études environnementales avancées"
-      ]
+        "Mathématiques et mécanique",
+        "Informatique et sciences de l'information",
+        "Physique et astronomie",
+        "Biosciences",
+        "Informatique et techniques d'informatique",
+        "Sécurité de l'information"
+    ],
+    Master: [
+        "Informatique et sciences de l'information",
+        "Physique et astronomie",
+        "Biosciences",
+        "Sécurité de l'information"
+    ],
+    Doctorat: [
+        "Sciences naturelles",
+        "Technologies avancées",
+        "Physique appliquée",
+        "Informatique avancée"
+    ]
     },
+
     "L'université d'État d'Altaï": {
       Licence: [
-        "Biologie et sciences naturelles",
-        "Mathématiques et informatique",
-        "Histoire et archéologie",
-        "Géographie et géoécologie"
-      ],
-      Master: [
-        "Technologies de l'information et modélisation",
-        "Études en sciences naturelles",
-        "Patrimoine historique et culturel"
-      ],
-      Doctorat: [
-        "Recherche en biologie",
-        "Sciences historiques avancées"
-      ]
+        "Mathématiques",
+        "Physique",
+        "Biologie",
+        "Chimie",
+        "Informatique"
+    ],
+    Master: [
+        "Mathématiques appliquées",
+        "Physique appliquée",
+        "Biotechnologie",
+        "Informatique"
+    ],
+    Doctorat: [
+        "Mathématiques",
+        "Physique",
+        "Biologie",
+        "Chimie"
+    ]
     },
+
     "L'université d'État d'Amour": {
-      Licence: [
-        "Génie civil",
-        "Économie et gestion",
-        "Ingénierie des ressources naturelles",
-        "Informatique et mathématiques appliquées"
-      ],
-      Master: [
-        "Technologies de l'ingénierie avancée",
-        "Gestion stratégique et durabilité",
-        "Systèmes numériques appliqués"
-      ],
-      Doctorat: [
-        "Recherche en ingénierie des ressources",
-        "Études avancées en économie"
-      ]
+ Licence: [
+        "Mathématiques",
+        "Physique",
+        "Biologie",
+        "Chimie",
+        "Informatique"
+    ],
+    Master: [
+        "Mathématiques appliquées",
+        "Physique appliquée",
+        "Biotechnologie",
+        "Informatique"
+    ],
+    Doctorat: [
+        "Mathématiques",
+        "Physique",
+        "Biologie",
+        "Chimie"
+    ]
     },
     "L'université d'État d'Astrakhan": {
       Licence: [
-        "Biologie marine",
-        "Chimie environnementale",
-        "Informatique et mathématiques",
-        "Langues étrangères"
-      ],
-      Master: [
-        "Conservation et biotechnologies marines",
-        "Gestion de l'environnement",
-        "Langues et traduction avancées"
-      ],
-      Doctorat: [
-        "Recherche en biologie marine",
-        "Études en chimie environnementale"
-      ]
+        "Mathématiques",
+        "Physique",
+        "Biologie",
+        "Chimie",
+        "Informatique"
+    ],
+    Master: [
+        "Mathématiques appliquées",
+        "Physique appliquée",
+        "Biotechnologie",
+        "Informatique"
+    ],
+    Doctorat: [
+        "Mathématiques",
+        "Physique",
+        "Biologie",
+        "Chimie"
+    ]
     },
     "L'université d'État de la Bachkirie": {
       Licence: [
-        "Sciences politiques",
-        "Informatique appliquée",
-        "Mathématiques fondamentales",
-        "Physique et technologies numériques"
-      ],
-      Master: [
-        "Informatique et cybersécurité",
-        "Sciences politiques avancées",
-        "Applications mathématiques et physiques"
-      ],
-      Doctorat: [
-        "Recherche en cybersécurité",
-        "Études avancées en physique appliquée"
-      ]
+        "Mathématiques",
+        "Physique",
+        "Biologie",
+        "Chimie",
+        "Informatique"
+    ],
+    Master: [
+        "Mathématiques appliquées",
+        "Physique appliquée",
+        "Biotechnologie",
+        "Informatique"
+    ],
+    Doctorat: [
+        "Mathématiques",
+        "Physique",
+        "Biologie",
+        "Chimie"
+    ]
+
     },
     "L'université d'État de Belgorod": {
       Licence: [
-        "Architecture et urbanisme",
-        "Informatique et systèmes d'information",
-        "Biologie et biotechnologie",
-        "Sciences économiques"
-      ],
-      Master: [
-        "Planification urbaine et technologies vertes",
-        "Biotechnologies avancées",
-        "Gestion stratégique des entreprises"
-      ],
-      Doctorat: [
-        "Recherche en biotechnologie",
-        "Études en urbanisme durable"
-      ]
+        "Mathématiques",
+        "Physique",
+        "Biologie",
+        "Chimie",
+        "Informatique"
+    ],
+    Master: [
+        "Mathématiques appliquées",
+        "Physique appliquée",
+        "Biotechnologie",
+        "Informatique"
+    ],
+    Doctorat: [
+        "Mathématiques",
+        "Physique",
+        "Biologie",
+        "Chimie"
+    ]
     },
+
     "L'université d'État du Bratsk": {
       Licence: [
-        "Ingénierie énergétique",
-        "Automatisation industrielle",
-        "Informatique appliquée",
-        "Écologie et gestion des ressources naturelles"
-      ],
-      Master: [
-        "Systèmes énergétiques avancés",
-        "Robotique et automatisation",
-        "Durabilité et gestion de l'environnement"
-      ],
-      Doctorat: [
-        "Recherche en systèmes énergétiques",
-        "Études avancées en robotique"
-      ]
+        "Physique",
+        "Chimie",
+        "Informatique",
+        "Génie électrique",
+        "Génie mécanique",
+        "Technologies du bâtiment",
+        "Génie thermique"
+    ],
+    Master: [
+        "Génie électrique",
+        "Génie mécanique",
+        "Technologies du bâtiment",
+        "Génie thermique",
+        "Informatique"
+    ],
+    Doctorat: [
+        "Génie électrique",
+        "Génie mécanique",
+        "Génie logiciel",
+        "Génie de la construction"
+    ]
     },
-    "L'université d'État de Bryansk": {
-      Licence: [
-        "Ingénierie mécanique",
-        "Agriculture et technologies alimentaires",
-        "Informatique et génie logiciel",
-        "Génie civil"
-      ],
-      Master: [
-        "Technologies avancées en ingénierie mécanique",
-        "Agro-industrie et biotechnologies",
-        "Systèmes numériques pour le génie civil"
-      ],
-      Doctorat: [
-        "Recherche en ingénierie mécanique",
-        "Biotechnologies appliquées"
-      ]
-    },
+    "L'université d'État de Bryansk":{
+  Licence: [
+    "Génie civil (construction industrielle et civile, construction urbaine et services municipaux, matériaux de construction, routes, ventilation et chauffage)",
+    "Électrotechnique et génie électrique",
+    "Exploitation des machines et équipements technologiques",
+    "Sécurité technosphérique (sécurité de la vie dans la technosphère)",
+    "Technologie des procédés chimiques, pétrochimie et biotechnologie",
+    "Informatique et ingénierie informatique",
+    "Systèmes d'information et technologies",
+    "Génie logiciel",
+    "Foresterie et architecture paysagère",
+    "Économie (économie de l'investissement et du bâtiment)",
+    "Gestion (marketing numérique, gestion de la production)",
+    "Biomédecine (biologie, chimie, mathématiques)"
+  ],
+  Master: [
+    "Théorie et conception des bâtiments et structures",
+    "Conception, construction, exploitation et maintenance des routes",
+    "Technologies innovantes pour la construction et la reconstruction des bâtiments",
+    "Gestion environnementale et utilisation de l'eau",
+    "Systèmes d'information intelligents et technologies",
+    "Protection environnementale et méthodes de restauration",
+    "Architecture paysagère moderne et design urbain",
+    "Organisation de la gestion forestière, reproduction et conservation",
+    "Économie (contrôle financier, évaluation d'entreprise)",
+    "Biomédecine avancée"
+  ],
+  Doctorat: [
+    "Génie civil",
+    "Électrotechnique",
+    "Informatique appliquée",
+    "Technologies chimiques et biotechnologie",
+    "Gestion environnementale",
+    "Économie appliquée",
+    "Biomédecine"
+  ]
+},
     "L'université d'État de la Bouriatie": {
-      Licence: [
-        "Sciences sociales et humanités",
-        "Sciences naturelles et environnement",
-        "Technologies de l'information",
-        "Langues et linguistique"
-      ],
-      Master: [
-        "Gestion environnementale",
-        "Études avancées en sciences sociales",
-        "Applications des technologies de l'information"
-      ],
-      Doctorat: [
-        "Recherche en sciences sociales",
-        "Études en linguistique avancée"
-      ]
-    },
+    Licence: [
+        "Mathématiques",
+        "Mathématiques appliquées et informatique",
+        "Mathématiques et informatique",
+        "Mécanique et modélisation mathématique",
+        "Médecine générale",
+        "Physique",
+        "Chimie",
+        "Biologie",
+        "Technologie des télécommunications et de l'électronique",
+        "Technologie de l'aviation et de l'espace",
+        "Technologie des transports",
+        "Écologie et gestion de la nature",
+        "Biotechnologie",
+        "Processus et systèmes d’information"
+    ],
+    Master: [
+        "Mathématiques",
+        "Mathématiques appliquées et informatique",
+        "Mathématiques et informatique",
+        "Mécanique et modélisation mathématique",
+        "Médecine générale",
+        "Physique",
+        "Chimie",
+        "Biologie",
+        "Technologie des télécommunications et de l'électronique",
+        "Technologie de l'aviation et de l'espace",
+        "Technologie des transports",
+        "Écologie et gestion de la nature",
+        "Biotechnologie",
+        "Processus et systèmes d’information"
+    ],
+    Doctorat: [
+        "Médecine générale",
+        "Physique",
+        "Chimie",
+        "Biologie",
+        "Matériaux et technologies",
+        "Biologie et médecine",
+        "Sciences de l’espace",
+        "Sciences exactes"
+    ]
+},
     "L'université d'État de Vladimir Alexandre Grigoriévitch, Nikolay Grigoriévitch Stoletovy": {
       Licence: [
-        "Ingénierie mécanique",
-        "Chimie industrielle",
-        "Informatique et génie logiciel",
-        "Gestion d'entreprise"
-      ],
-      Master: [
-        "Ingénierie avancée en génie chimique",
+        "Mathématiques appliquées",
+        "Physique",
+        "Informatique",
+        "Mécanique et génie mécanique",
+        "Biologie et écologie",
+        "Technologies de l'information et radio-électronique",
+        "Architecture, construction et énergie",
+        "Sciences de la santé (médecine)",
+        "Économie et gestion"
+    ],
+    Master: [
+        "Mathématiques appliquées",
+        "Physique",
+        "Informatique",
+        "Mécanique et génie mécanique",
+        "Biologie et écologie",
+        "Technologies de l'information et radio-électronique",
+        "Architecture, construction et énergie",
+        "Sciences de la santé (médecine)",
+        "Économie et gestion"
+    ],
+    Doctorat: [
+        "Mathématiques appliquées",
+        "Physique",
+        "Informatique",
+        "Mécanique",
+        "Biologie",
         "Technologies de l'information",
-        "Stratégies de gestion industrielle"
-      ],
-      Doctorat: [
-        "Recherche en chimie industrielle",
-        "Études en génie logiciel avancé"
-      ]
+        "Architecture et génie civil",
+        "Sciences médicales"
+    ]
     },
     "L'université d'État de Volgograd": {
       Licence: [
-        "Construction et architecture",
-        "Sciences informatiques",
-        "Énergies renouvelables",
-        "Biotechnologies"
-      ],
-      Master: [
-        "Urbanisme durable",
-        "Énergies durables",
-        "Biotechnologies et innovation"
-      ],
-      Doctorat: [
-        "Recherche en énergies renouvelables",
-        "Études en biotechnologie avancée"
-      ]
+        "Mathématiques",
+        "Informatique",
+        "Physique",
+        "Radiophysique",
+        "Laser et optique",
+        "Biologie",
+        "Écologie et gestion des ressources naturelles",
+        "Génie civil",
+        "Architecture",
+        "Technologies de l'information",
+        "Économie appliquée"
+    ],
+    Master: [
+        "Mathématiques appliquées",
+        "Informatique avancée",
+        "Physique théorique et expérimentale",
+        "Radiophysique et électronique",
+        "Biotechnologie",
+        "Gestion environnementale",
+        "Génie civil et construction",
+        "Architecture urbaine",
+        "Technologies de l'information",
+        "Économie et gestion"
+    ],
+    Doctorat: [
+        "Mathématiques",
+        "Physique",
+        "Radiophysique",
+        "Biologie",
+        "Chimie",
+        "Sciences de l'environnement",
+        "Génie civil",
+        "Technologies de l'information"
+    ]
     },
-    "L'université d'État de Volga": {
+
+    "L'université d'État de Technologie de la Volga": {
       Licence: [
-        "Informatique et systèmes numériques",
-        "Ingénierie industrielle",
-        "Langues étrangères",
-        "Environnement et durabilité"
-      ],
-      Master: [
-        "Cybersécurité et intelligence artificielle",
-        "Applications industrielles avancées",
-        "Gestion environnementale et stratégie durable"
-      ],
-      Doctorat: [
-        "Recherche en informatique",
-        "Innovations en ingénierie industrielle"
-      ]
+        "Foresterie et gestion de la nature",
+        "Technologie et équipement de la production du bois",
+        "Design paysager et architecture",
+        "Standardisation et métrologie",
+        "Sciences biologiques",
+        "Systèmes et technologies de l'information",
+        "Ingénierie",
+        "Technologie chimique",
+        "Biotechnologie",
+        "Technologies pétrolières et gazières",
+        "Génie mécanique agricole",
+        "Science des matériaux",
+        "Génie civil",
+        "Architecture",
+        "Génie environnemental et gestion de l'eau",
+        "Radioélectronique",
+        "Technologies de l'information et communications",
+        "Informatique et science informatique"
+        ],
+        Master: [
+        "Foresterie et gestion de la nature",
+        "Technologie chimique",
+        "Biotechnologie",
+        "Génie mécanique",
+        "Génie civil",
+        "Architecture",
+        "Radioélectronique",
+        "Technologies de l'information",
+        "Informatique avancée",
+        "Gestion environnementale"
+        ],
+        Doctorat: [
+        "Sciences biologiques",
+        "Technologie chimique",
+        "Génie mécanique",
+        "Génie civil",
+        "Radioélectronique",
+        "Technologies de l'information",
+        "Biotechnologie"
+        ]
     },
+  
+
+
     "L'université d'État de Voronej": {
       Licence: [
-        "Sciences biologiques",
-        "Informatique et intelligence artificielle",
-        "Sciences politiques et sociales",
-        "Écologie et gestion de la nature"
-      ],
-      Master: [
-        "Technologies en biologie moléculaire",
-        "Cybersécurité et IA",
-        "Études avancées en sciences politiques"
-      ],
-      Doctorat: [
-        "Recherche en biologie moléculaire",
-        "Études approfondies en IA et écologie"
-      ]
+        "Médecine de base",
+        "Pharmacie",
+        "Technologies de l’information",
+        "Radiophysique",
+        "Biologie",
+        "Chimie",
+        "Physique",
+        "Mathématiques",
+        "Informatique",
+        "Ingénierie",
+        "Sciences naturelles"
+        ],
+        Master: [
+        "Médecine fondamentale",
+        "Pharmacie",
+        "Technologies de l’information avancées",
+        "Radiophysique",
+        "Biotechnologie",
+        "Physique théorique et appliquée",
+        "Mathématiques appliquées",
+        "Informatique",
+        "Ingénierie",
+        "Gestion environnementale"
+        ],
+        Doctorat: [
+        "Médecine",
+        "Physique",
+        "Chimie",
+        "Biologie",
+        "Mathématiques",
+        "Informatique",
+        "Ingénierie",
+        "Sciences naturelles"
+        ]
     },
     "L'université d'État de Viatka": {
       Licence: [
-        "Informatique et génie logiciel",
-        "Énergies renouvelables et durables",
-        "Biotechnologies",
-        "Langues étrangères"
-      ],
-      Master: [
-        "Développement logiciel avancé",
-        "Technologies énergétiques durables",
-        "Innovations en biotechnologie"
-      ],
-      Doctorat: [
-        "Recherche en développement logiciel",
-        "Études en énergie renouvelable"
-      ]
+        "Procédés de technologie chimique",
+        "Microbiologie",
+        "Chimie et technologie chimique",
+        "Écologie",
+        "Génie mécanique",
+        "Robotique",
+        "Gestion de l'électricité",
+        "Thermotechnique",
+        "Technologie de l'information",
+        "Technologie et conception de vêtements",
+        "Design industriel",
+        "Technologie métallurgique"
+        ],
+        Master: [
+        "Procédés de technologie chimique (programme en anglais)",
+        "Microbiologie",
+        "Chimie et technologie chimique",
+        "Écologie",
+        "Génie mécanique",
+        "Robotique",
+        "Gestion de l'électricité",
+        "Thermotechnique",
+        "Technologie de l'information",
+        "Design industriel"
+        ],
+        Doctorat: [
+        "Chimie",
+        "Technologie chimique",
+        "Microbiologie",
+        "Écologie",
+        "Génie mécanique",
+        "Robotique",
+        "Technologies de l'information"
+        ]
     },
-    "L'université d'État des mines d'Altaï": {
-      Licence: [
-        "Génie minier",
-        "Informatique et géoinformatique",
-        "Automatisation industrielle",
-        "Sciences environnementales"
-      ],
-      Master: [
-        "Technologies avancées pour l'exploitation minière",
-        "Systèmes géoinformatiques",
-        "Durabilité environnementale"
-      ],
-      Doctorat: [
-        "Recherche en génie minier",
-        "Études avancées en géoinformatique"
-      ]
-    },
+    
     "L'université d'État de Daghestan": {
       Licence: [
-        "Sciences naturelles",
-        "Informatique et systèmes d'information",
-        "Sciences sociales et humanités",
-        "Biologie et écologie"
-      ],
-      Master: [
-        "Applications avancées en informatique",
+        "Biologie",
+        "Mathématiques et informatique",
+        "Physique",
+        "Chimie",
+        "Informatique et technologies de l'information",
+        "Écologie et géographie",
+        "Technologies de la communication",
+        "Électronique et nanoélectronique",
+        "Systèmes énergétiques et réseaux électriques",
+        "Technologie de fermentation et vinification",
+        "Construction industrielle et civile",
+        "Gestion de la sécurité en situations d'urgence"
+        ],
+        Master: [
+        "Biotechnologie",
+        "Mathématiques appliquées",
+        "Physique théorique et appliquée",
+        "Chimie analytique",
+        "Technologies de l'information avancées",
         "Gestion environnementale",
-        "Études en sciences naturelles"
-      ],
-      Doctorat: [
-        "Recherche en informatique",
-        "Études environnementales avancées"
-      ]
+        "Radioélectronique",
+        "Énergie électrique",
+        "Technologie de fermentation",
+        "Construction et génie civil",
+        "Protection en situations d'urgence"
+        ],
+        Doctorat: [
+        "Nanotechnologies et nanomatériaux",
+        "Physique des plasmas",
+        "Chimie",
+        "Biologie",
+        "Technologies de l'information",
+        "Énergie électrique",
+        "Construction et génie civil",
+        "Systèmes de sécurité"
+        ]
     },
     "L'université d'Extrême Orient fédérale": {
       Licence: [
@@ -3235,23 +3428,32 @@ studyLevels: ["Licence", "Master", "Doctorat"],
         "Études avancées en sciences sociales"
       ]
     },
-    "L'université d'État de Tambov G.P.Derjavin": {
-      Licence: [
-        "Littérature et linguistique",
+    
+    "L'université d'État de Tambov G.R. Derjavine": {
+    Licence: [
+        "Médecine générale (MBBS)",
+        "Médecine dentaire",
+        "Pharmacie",
+        "Économie",
         "Informatique appliquée",
-        "Sciences sociales",
-        "Langues étrangères"
-      ],
-      Master: [
-        "Études avancées en linguistique",
-        "Applications numériques",
-        "Technologies éducatives"
-      ],
-      Doctorat: [
-        "Recherche en linguistique",
-        "Études en technologies numériques"
-      ]
-    },
+        "Architecture et génie civil"
+    ],
+    Master: [
+        "Médecine et spécialités médicales",
+        "Économie et gestion",
+        "Informatique et technologies de l'information",
+        "Biotechnologie et sciences naturelles",
+        "Génie civil et architecture",
+        "Chimie et nanotechnologies",
+    ],
+    Doctorat: [
+        "Médecine avancée",
+        "Biotechnologie et écologie",
+        "Génie civil et mécanique",
+        "Technologies de l'information et mathématiques appliquées"
+    ]
+},
+
     "L'université d'État de Tver": {
       Licence: [
         "Génie mécanique",
@@ -8339,6 +8541,35 @@ studyLevels: ["Licence", "Master", "Doctorat"],
           ]
         },
 
+
+"L'université de médecine de la Volga":{
+  Licence: [
+    "Médecine générale",
+    "Pédiatrie",
+    "Pharmacie",
+    "Stomatologie",
+    "Prévention médicale",
+    "Soins infirmiers"
+    ],
+    Master: [
+    "médecine interne",
+    "chirurgie",
+    " pédiatrie",
+    "radiologie", 
+    "gynécologie",
+    " neurologie"
+    ],
+    Doctorat: [
+    "Recherche médicale avancée dans diverses spécialités cliniques"
+    ]
+},
+
+
+
+
+
+
+
 /////////////////////////////
 
 
@@ -8926,7 +9157,8 @@ studyLevels: ["Licence", "Master", "Doctorat"],
         "Recherche en architecture et urbanisme",
         "Électroénergétique et électrotechnique avancée"
     ]
-}
+},
+
       
           
     

@@ -7,7 +7,6 @@ export default function StepIndicator({ currentStep }) {
         { number: 3, label: "Choix du Logement" },
         { number: 4, label: "Services Complémentaires" },
         { number: 5, label: "Résumé" },
-
     ]
 
     return (

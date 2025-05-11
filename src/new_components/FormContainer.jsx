@@ -35,9 +35,7 @@ export default function FormContainer() {
         university: "",
         field: "",
         level: "",
-        serviceMandatoryPrice: 0, // <-- Ajoute cette ligne
-
-
+        
         // Étape 3: Hébergement
         accommodation: null,
 
