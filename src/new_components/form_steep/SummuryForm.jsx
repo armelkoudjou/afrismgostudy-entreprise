@@ -9,6 +9,10 @@ import { mockData } from "../lib/data";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+// Importer le nouveau composant
+import CostVisualization from "../CostVisualization";
+
+
 // Fonction pour formater les montants en FCFA
 const formatToFCFA = (amount) => {
     return new Intl.NumberFormat('fr-FR').format(amount) + ' FCFA';
@@ -126,6 +130,16 @@ export default function SummaryForm({ formData, prevStep, mockData }) {
                     </div>
                 </div>
             </div>
+            {/* Ajouter la visualisation des coûts */}
+                <div className="mt-6">
+                    <h4 className="text-md font-medium text-gray-900 mb-4">Analyse des coûts</h4>
+                    <CostVisualization 
+                        formData={formData}
+                        mockData={mockData}
+                        showDetails={true}
+                    />
+                </div>
+
 
             {/* Boutons d'action */}
             <>

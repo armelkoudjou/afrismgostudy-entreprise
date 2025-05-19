@@ -8,11 +8,7 @@ export const SERVICE_IDS = {
   ASSURANCE: "assurance"
 };
 
-
-
-export const mockData = {
-
-  
+export const mockData = {  
   accommodations: [
     { type: "Chambre Simple", capacity: "1 personne", price: 150000 },
     { type: "Chambre Double", capacity: "2 personnes", price: 100000 },
@@ -23,19 +19,18 @@ export const mockData = {
 ],
 
 
-
 additionalServices: [
     {
         id: "passport",
         name: "Passeport",
         description: "Aide à l'obtention d'un passeport",
-        price: 115000
+        price: 130000
     },
     {
         id: "translation",
         name: "Traduction par document",
         description: "Traduction de vos documents",
-        price: 30000
+        price: 40000
     },
     {
         id: "airport",
@@ -51,11 +46,6 @@ additionalServices: [
   },
   
 ],
-
-
-
-
-
 
 studyLevels: ["Licence", "Master", "Doctorat"],
 
@@ -83,12 +73,10 @@ studyLevels: ["Licence", "Master", "Doctorat"],
             "Les Universites Chimiques Et Technologiques de la Russie",
             "Les Universites de La Geologie, L'industrie Miniere Et La Metallurgie de la Russie",
             "Les Universites Petro-Gaziers de la Russie",
-            "Les Universites De La Technologie D’alimentation de la Russie",
-            "Les Universites D’industrie Forestiere de la Russie",
+            "Les Universites De La Technologie D'alimentation de la Russie",
+            "Les Universites D'industrie Forestiere de la Russie",
         ]
     },
-
-
 
 
 
@@ -245,7 +233,7 @@ studyLevels: ["Licence", "Master", "Doctorat"],
             "L'université d'État technique d'Iaroslavl"
         ],
 
-            "Les Universites Universites D'état de la Russie":[
+            "Les Universites  D'état de la Russie":[
                 "L'université d'État d'Adyguée",
                 "L'université d'État d'Altaï",
                 "L'université d'État d'Amour",
@@ -587,7 +575,7 @@ studyLevels: ["Licence", "Master", "Doctorat"],
 
  
 
-            "Les Universites De La Technologie D’alimentation de la Russie": [
+            "Les Universites De La Technologie D'alimentation de la Russie": [
                 "L'Académie d'État de la laiterie de Vologda N.V. Verechtchagin",
                 "L'Institut d'État de l'industrie de l'alimentation de Kémérovo",
                 "L'Université d'État technologique de Kuban",
@@ -597,7 +585,7 @@ studyLevels: ["Licence", "Master", "Doctorat"],
             ],
 
 
-            "Les Universites D’industrie Forestiere de la Russie": [
+            "Les Universites D'industrie Forestiere de la Russie": [
                 "L'Académie d'État de l'économie forestière et des technologies de Voronej",
                 "L'Université d'État technique forestière de Saint-Pétersbourg",
             ]
@@ -9196,4 +9184,3 @@ studyLevels: ["Licence", "Master", "Doctorat"],
     }
 
 };
-
