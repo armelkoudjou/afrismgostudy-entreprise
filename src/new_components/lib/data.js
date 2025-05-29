@@ -10,12 +10,12 @@ export const SERVICE_IDS = {
 
 export const mockData = {  
   accommodations: [
-    { type: "Chambre Simple", capacity: "1 personne", price: 150000 },
-    { type: "Chambre Double", capacity: "2 personnes", price: 100000 },
+    { type: "Chambre Simple", capacity: "1 personne", price: 14000 },
+    { type: "Chambre Double", capacity: "2 personnes", price: 7000 },
     { type: "Studio", capacity: "1 personne", price: 250000 },
     { type: "Appartement T1", capacity: "1-2 personnes", price: 350000 },
     { type: "Appartement T2", capacity: "2-3 personnes", price: 450000 },
-    { type: "Résidence Universitaire", capacity: "1 personne", price: 80000 }
+    { type: "Résidence Universitaire", capacity: "1 personne", price: 7000 }
 ],
 
 
@@ -28,8 +28,8 @@ additionalServices: [
     },
     {
         id: "translation",
-        name: "Traduction par document",
-        description: "Traduction de vos documents",
+        name: "Traduction par document (01)",
+        description: "Traduction d'un document ",
         price: 40000
     },
     {
@@ -46,6 +46,19 @@ additionalServices: [
   },
   
 ],
+
+  // NOUVELLE SECTION POUR LES FRAIS OBLIGATOIRES
+  obligatoryFees: [
+    { 
+      id: "etude_dossier", // ou SERVICE_IDS.ETUDE_DOSSIER si vous l'ajoutez
+      name: "Étude dossier", 
+      price: 25000, // Modifiez ce prix si nécessaire
+      description: "Traitement et évaluation de votre dossier de candidature." 
+    }
+    // Vous pouvez ajouter d'autres frais obligatoires ici à l'avenir
+    // { id: "autre_frais_oblig", name: "Autre Frais Obligatoire", price: 10000, description: "Description de l'autre frais." }
+  ],
+
 
 studyLevels: ["Licence", "Master", "Doctorat"],
 

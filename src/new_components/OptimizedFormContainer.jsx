@@ -64,7 +64,7 @@ const OptimizedStepIndicator = memo(({ currentStep, steps }) => {
 OptimizedStepIndicator.displayName = 'OptimizedStepIndicator';
 
 /**
- * Version optimisée du conteneur de formulaire
+ * Version optimisée du conteneur de formulai²re
  */
 export default function OptimizedFormContainer() {
   // Définition des étapes
@@ -97,7 +97,7 @@ export default function OptimizedFormContainer() {
     // Étape 3: Hébergement
     accommodation: null,
     
-    // Étape 4: Services complémentaires
+    // Étape 4: Services Supplémentaires
     selectedServices: [],
   });
   

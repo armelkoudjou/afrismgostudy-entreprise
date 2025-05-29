@@ -6,8 +6,8 @@ export default function AdditionalServicesForm({ formData, handleServiceToggle, 
 
     return (
         <div className="space-y-6">
-            <h3 className="text-lg font-medium text-gray-900 mb-4">Services Complémentaires</h3>
-            <p className="text-sm text-gray-600 mb-6">Sélectionnez les services complémentaires dont vous avez besoin</p>
+            <h3 className="text-lg font-medium text-gray-900 mb-4">Services Supplémentaires</h3>
+            <p className="text-sm text-gray-600 mb-6">Sélectionnez les services supplémentaire dont vous avez besoin</p>
 
             <div className="space-y-4">
                 {services.map((service) => (

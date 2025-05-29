@@ -5,8 +5,9 @@ export default function StepIndicator({ currentStep }) {
         { number: 1, label: "Informations Personnelles" },
         { number: 2, label: "Choix du Programme" },
         { number: 3, label: "Choix du Logement" },
-        { number: 4, label: "Services Complémentaires" },
-        { number: 5, label: "Résumé" },
+        { number: 4,label:"Frais obligatoires"},
+        { number: 5, label: "Services Supplémentaires" },
+        { number: 6, label: "Résumé" },
     ]
 
     return (
