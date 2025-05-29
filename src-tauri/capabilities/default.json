@@ -1,11 +1,10 @@
 {
   "$schema": "../gen/schemas/desktop-schema.json",
-  "identifier": "default",
-  "description": "enables the default permissions",
-  "windows": [
-    "main"
-  ],
+  "identifier": "default-capability",
+  "description": "Default permissions for the application",
+  "windows": ["main"],
   "permissions": [
-    "core:default"
+    "core:default",
+    "shell:allow-open"
   ]
 }

@@ -1,8 +1,8 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
-  "productName": "AfrismGoStudy",
-  "version": "0.1.0", // IMPORTANT : Vous devrez incrémenter cette version pour chaque nouvelle release
-  "identifier": "com.afrismgostudy.app",
+  "productName": "AfrismGoStudy Entreprise",
+  "version": "0.1.1",
+  "identifier": "com.afrismgostudy.app.entreprise",
   "build": {
     "frontendDist": "../dist",
     "devUrl": "http://localhost:5173",
@@ -12,7 +12,8 @@
   "app": {
     "windows": [
       {
-        "title": "AfrismGoStudy-registration",
+        "label": "main",
+        "title": "AfrismGoStudy Entreprise", 
         "width": 800,
         "height": 600,
         "resizable": true,
@@ -34,19 +35,17 @@
       "icons/icon.ico"
     ]
   },
-  "tauri": {
-    "updater": {
-      "active": true, 
-      "dialog": true, 
+  "plugins": { 
+    "updater": { 
+      "active": true,
+      "dialog": true,
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEY2ODMxMEZDNTZEMkFDMzEKUldReHJOSlcvQkNEOW5heDBkVE4zaHowdlpQeGZDWkNtOWcvbWRUcUx3UUNuMzczRjZiN3FHNi8K",
       "endpoints": [
-        "https://github.com/Duroy51/student_form/releases/latest/download/updater.json"
-        
-      ],
-      "windows": {
-        "installMode": "passive"
-      }
+        "https://github.com/armelkoudjou/afrismgostudy-entreprise/releases/latest/download/updater.json" 
+      ]
     }
-    
   }
+                 
+                                
 }
+
