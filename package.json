@@ -1,7 +1,7 @@
 {
-  "name": "frontend",
+  "name": "afrismgostudy-frontend",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -44,13 +44,12 @@
   "main": "eslint.config.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Duroy51/student_form.git"
+    "url": "git+https://github.com/armelkoudjou/afrismgostudy-entreprise.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+"keywords": ["tauri", "react", "entreprise", "afrismgostudy"],  "author": "Afrism",
+  "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/Duroy51/student_form/issues"
+    "url": "https://github.com/armelkoudjou/afrismgostudy-entreprise/issues"
   },
-  "homepage": "https://github.com/Duroy51/student_form#readme"
+  "homepage": "https://github.com/armelkoudjou/afrismgostudy-entreprise#readme"
 }
