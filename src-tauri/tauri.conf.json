@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
-  "productName": "AfrismGoStudy Entreprise",
-  "version": "0.1.1",
+  "productName": "AfrismGoStudy Entreprise", 
+  "version": "0.1.1", 
   "identifier": "com.afrismgostudy.app.entreprise",
   "build": {
     "frontendDist": "../dist",
@@ -13,7 +13,7 @@
     "windows": [
       {
         "label": "main",
-        "title": "AfrismGoStudy Entreprise", 
+        "title": "AfrismGoStudy Entreprise",
         "width": 800,
         "height": 600,
         "resizable": true,
@@ -35,17 +35,14 @@
       "icons/icon.ico"
     ]
   },
-  "plugins": { 
-    "updater": { 
+  "plugins": {
+    "updater": {
       "active": true,
       "dialog": true,
-      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEY2ODMxMEZDNTZEMkFDMzEKUldReHJOSlcvQkNEOW5heDBkVE4zaHowdlpQeGZDWkNtOWcvbWRUcUx3UUNuMzczRjZiN3FHNi8K",
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IENERUQ4NzVCMzExQUM2OTcKUldTWHhob3hXNGZ0emZRQ01WYkpPdzZKUjE2Q2lSVkt1T0xwU094bXNTcVhSNjNlSmhuTjBGS0UK", 
       "endpoints": [
-        "https://github.com/armelkoudjou/afrismgostudy-entreprise/releases/latest/download/updater.json" 
+        "https://github.com/armelkoudjou/afrismgostudy-entreprise/releases/latest/download/updater.json"
       ]
     }
   }
-                 
-                                
 }
-
